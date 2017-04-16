@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/src/ros_pololu_servo-master/include/polstro/PolstroSerialInterface.h
+string
+-
+
+/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/src/ros_pololu_servo-master/include/polstro/PolstroSerialInterfacePOSIX.h
+PolstroSerialInterface.h
+/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/src/ros_pololu_servo-master/include/polstro/PolstroSerialInterface.h
+
+/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/src/ros_pololu_servo-master/include/polstro/PolstroSerialInterfaceWindows.h
+PolstroSerialInterface.h
+/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/src/ros_pololu_servo-master/include/polstro/PolstroSerialInterface.h
+windows.h
+-
+
+/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/src/ros_pololu_servo-master/src/polstro/PolstroSerialInterface.cpp
+polstro/PolstroSerialInterface.h
+-
+polstro/PolstroSerialInterfaceWindows.h
+-
+polstro/PolstroSerialInterfacePOSIX.h
+-
+
+/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/src/ros_pololu_servo-master/src/polstro/PolstroSerialInterfacePOSIX.cpp
+polstro/PolstroSerialInterfacePOSIX.h
+-
+fcntl.h
+-
+stdio.h
+-
+unistd.h
+-
+termios.h
+-
+errno.h
+-
+
