@@ -1,0 +1,8 @@
+prefix=/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/install
+
+Name: wall_avoid
+Description: Description of wall_avoid
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/install/lib 
+Requires: 

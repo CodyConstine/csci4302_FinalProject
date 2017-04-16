@@ -308,7 +308,7 @@ gtest_force_shared_crt:BOOL=OFF
 gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 
 //Path to a library.
-lib:FILEPATH=/opt/ros/kinetic/lib/libactionlib.so
+lib:FILEPATH=/opt/ros/kinetic/lib/libxmlrpcpp.so
 
 //The directory containing a CMake configuration file for message_generation.
 message_generation_DIR:PATH=/opt/ros/kinetic/share/message_generation/cmake
@@ -318,6 +318,9 @@ message_runtime_DIR:PATH=/opt/ros/kinetic/share/message_runtime/cmake
 
 //Dependencies for target
 polstro_LIB_DEPENDS:STATIC=
+
+//The directory containing a CMake configuration file for ros_pololu_servo-master/.
+ros_pololu_servo-master/_DIR:PATH=ros_pololu_servo-master/_DIR-NOTFOUND
 
 //Value Computed by CMake
 ros_pololu_servo_BINARY_DIR:STATIC=/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build/ros_pololu_servo-master
@@ -354,6 +357,12 @@ std_msgs_DIR:PATH=/opt/ros/kinetic/share/std_msgs/cmake
 
 //The directory containing a CMake configuration file for trajectory_msgs.
 trajectory_msgs_DIR:PATH=/opt/ros/kinetic/share/trajectory_msgs/cmake
+
+//Value Computed by CMake
+wall_avoid_BINARY_DIR:STATIC=/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build/wall_avoid
+
+//Value Computed by CMake
+wall_avoid_SOURCE_DIR:STATIC=/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/src/wall_avoid
 
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/kinetic/share/xmlrpcpp/cmake
@@ -460,7 +469,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

@@ -87,3 +87,10 @@
 /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build/ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryGoal.dir
 /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build/ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorCalibration.dir
 /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build/ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryAction.dir
+/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build/wall_avoid/CMakeFiles/list_install_components.dir
+/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build/wall_avoid/CMakeFiles/install.dir
+/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build/wall_avoid/CMakeFiles/rebuild_cache.dir
+/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build/wall_avoid/CMakeFiles/install/strip.dir
+/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build/wall_avoid/CMakeFiles/install/local.dir
+/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build/wall_avoid/CMakeFiles/test.dir
+/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build/wall_avoid/CMakeFiles/edit_cache.dir
