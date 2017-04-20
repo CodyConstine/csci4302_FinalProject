@@ -5,5 +5,6 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs(gtest)
+subdirs(pid)
 subdirs(ros_pololu_servo-master)
 subdirs(wall_avoid)

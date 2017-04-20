@@ -117,6 +117,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build/gtest/cmake_install.cmake")
+  include("/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build/pid/cmake_install.cmake")
   include("/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build/ros_pololu_servo-master/cmake_install.cmake")
   include("/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build/wall_avoid/cmake_install.cmake")
 
