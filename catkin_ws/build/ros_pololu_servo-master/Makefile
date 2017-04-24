@@ -166,199 +166,34 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-ros_pololu_servo-master/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-.PHONY : ros_pololu_servo-master/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryAction.dir/rule:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryAction.dir/rule
+.PHONY : ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryAction.dir/rule
 
 # Convenience name for target.
-geometry_msgs_generate_messages_eus: ros_pololu_servo-master/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryAction: ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryAction.dir/rule
 
-.PHONY : geometry_msgs_generate_messages_eus
+.PHONY : _ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryAction
 
 # fast build rule for target.
-geometry_msgs_generate_messages_eus/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make ros_pololu_servo-master/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-.PHONY : geometry_msgs_generate_messages_eus/fast
+_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryAction/fast:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryAction.dir/build.make ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryAction.dir/build
+.PHONY : _ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryAction/fast
 
 # Convenience name for target.
-ros_pololu_servo-master/CMakeFiles/polstro.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/polstro.dir/rule
-.PHONY : ros_pololu_servo-master/CMakeFiles/polstro.dir/rule
+ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorCalibration.dir/rule:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorCalibration.dir/rule
+.PHONY : ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorCalibration.dir/rule
 
 # Convenience name for target.
-polstro: ros_pololu_servo-master/CMakeFiles/polstro.dir/rule
+_ros_pololu_servo_generate_messages_check_deps_MotorCalibration: ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorCalibration.dir/rule
 
-.PHONY : polstro
+.PHONY : _ros_pololu_servo_generate_messages_check_deps_MotorCalibration
 
 # fast build rule for target.
-polstro/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/polstro.dir/build.make ros_pololu_servo-master/CMakeFiles/polstro.dir/build
-.PHONY : polstro/fast
-
-# Convenience name for target.
-ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_generate_messages.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_generate_messages.dir/rule
-.PHONY : ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_generate_messages.dir/rule
-
-# Convenience name for target.
-ros_pololu_servo_generate_messages: ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_generate_messages.dir/rule
-
-.PHONY : ros_pololu_servo_generate_messages
-
-# fast build rule for target.
-ros_pololu_servo_generate_messages/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_generate_messages.dir/build.make ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_generate_messages.dir/build
-.PHONY : ros_pololu_servo_generate_messages/fast
-
-# Convenience name for target.
-ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_py.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_py.dir/rule
-.PHONY : ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_py.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_py: ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_py.dir/rule
-
-.PHONY : actionlib_generate_messages_py
-
-# fast build rule for target.
-actionlib_generate_messages_py/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_py.dir/build.make ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_py.dir/build
-.PHONY : actionlib_generate_messages_py/fast
-
-# Convenience name for target.
-ros_pololu_servo-master/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
-.PHONY : ros_pololu_servo-master/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_lisp: ros_pololu_servo-master/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_lisp
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_lisp/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make ros_pololu_servo-master/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
-.PHONY : actionlib_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorCommand.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorCommand.dir/rule
-.PHONY : ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorCommand.dir/rule
-
-# Convenience name for target.
-_ros_pololu_servo_generate_messages_check_deps_MotorCommand: ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorCommand.dir/rule
-
-.PHONY : _ros_pololu_servo_generate_messages_check_deps_MotorCommand
-
-# fast build rule for target.
-_ros_pololu_servo_generate_messages_check_deps_MotorCommand/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorCommand.dir/build.make ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorCommand.dir/build
-.PHONY : _ros_pololu_servo_generate_messages_check_deps_MotorCommand/fast
-
-# Convenience name for target.
-ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_geneus.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_geneus.dir/rule
-.PHONY : ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_geneus.dir/rule
-
-# Convenience name for target.
-ros_pololu_servo_geneus: ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_geneus.dir/rule
-
-.PHONY : ros_pololu_servo_geneus
-
-# fast build rule for target.
-ros_pololu_servo_geneus/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_geneus.dir/build.make ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_geneus.dir/build
-.PHONY : ros_pololu_servo_geneus/fast
-
-# Convenience name for target.
-ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_eus.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_eus.dir/rule
-.PHONY : ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_eus: ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_eus.dir/rule
-
-.PHONY : actionlib_generate_messages_eus
-
-# fast build rule for target.
-actionlib_generate_messages_eus/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_eus.dir/build.make ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_eus.dir/build
-.PHONY : actionlib_generate_messages_eus/fast
-
-# Convenience name for target.
-ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
-.PHONY : ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-trajectory_msgs_generate_messages_nodejs: ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : trajectory_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-trajectory_msgs_generate_messages_nodejs/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build.make ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build
-.PHONY : trajectory_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorRange.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorRange.dir/rule
-.PHONY : ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorRange.dir/rule
-
-# Convenience name for target.
-_ros_pololu_servo_generate_messages_check_deps_MotorRange: ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorRange.dir/rule
-
-.PHONY : _ros_pololu_servo_generate_messages_check_deps_MotorRange
-
-# fast build rule for target.
-_ros_pololu_servo_generate_messages_check_deps_MotorRange/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorRange.dir/build.make ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorRange.dir/build
-.PHONY : _ros_pololu_servo_generate_messages_check_deps_MotorRange/fast
-
-# Convenience name for target.
-ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
-.PHONY : ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-trajectory_msgs_generate_messages_py: ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
-
-.PHONY : trajectory_msgs_generate_messages_py
-
-# fast build rule for target.
-trajectory_msgs_generate_messages_py/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build.make ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build
-.PHONY : trajectory_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_generate_messages_py.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_generate_messages_py.dir/rule
-.PHONY : ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_generate_messages_py.dir/rule
-
-# Convenience name for target.
-ros_pololu_servo_generate_messages_py: ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_generate_messages_py.dir/rule
-
-.PHONY : ros_pololu_servo_generate_messages_py
-
-# fast build rule for target.
-ros_pololu_servo_generate_messages_py/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_generate_messages_py.dir/build.make ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_generate_messages_py.dir/build
-.PHONY : ros_pololu_servo_generate_messages_py/fast
-
-# Convenience name for target.
-ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
-.PHONY : ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-trajectory_msgs_generate_messages_eus: ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
-
-.PHONY : trajectory_msgs_generate_messages_eus
-
-# fast build rule for target.
-trajectory_msgs_generate_messages_eus/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build.make ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build
-.PHONY : trajectory_msgs_generate_messages_eus/fast
+_ros_pololu_servo_generate_messages_check_deps_MotorCalibration/fast:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorCalibration.dir/build.make ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorCalibration.dir/build
+.PHONY : _ros_pololu_servo_generate_messages_check_deps_MotorCalibration/fast
 
 # Convenience name for target.
 ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_cpp.dir/rule:
@@ -391,19 +226,64 @@ _ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryFeedback/fast:
 .PHONY : _ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryFeedback/fast
 
 # Convenience name for target.
-ros_pololu_servo-master/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-.PHONY : ros_pololu_servo-master/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+ros_pololu_servo-master/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+.PHONY : ros_pololu_servo-master/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-geometry_msgs_generate_messages_py: ros_pololu_servo-master/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+actionlib_msgs_generate_messages_lisp: ros_pololu_servo-master/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : geometry_msgs_generate_messages_py
+.PHONY : actionlib_msgs_generate_messages_lisp
 
 # fast build rule for target.
-geometry_msgs_generate_messages_py/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make ros_pololu_servo-master/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
-.PHONY : geometry_msgs_generate_messages_py/fast
+actionlib_msgs_generate_messages_lisp/fast:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make ros_pololu_servo-master/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
+.PHONY : actionlib_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
+.PHONY : ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+trajectory_msgs_generate_messages_py: ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
+
+.PHONY : trajectory_msgs_generate_messages_py
+
+# fast build rule for target.
+trajectory_msgs_generate_messages_py/fast:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build.make ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build
+.PHONY : trajectory_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_generate_messages_py.dir/rule:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_generate_messages_py.dir/rule
+.PHONY : ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_generate_messages_py.dir/rule
+
+# Convenience name for target.
+ros_pololu_servo_generate_messages_py: ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_generate_messages_py.dir/rule
+
+.PHONY : ros_pololu_servo_generate_messages_py
+
+# fast build rule for target.
+ros_pololu_servo_generate_messages_py/fast:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_generate_messages_py.dir/build.make ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_generate_messages_py.dir/build
+.PHONY : ros_pololu_servo_generate_messages_py/fast
+
+# Convenience name for target.
+ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryGoal.dir/rule:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryGoal.dir/rule
+.PHONY : ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryGoal.dir/rule
+
+# Convenience name for target.
+_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryGoal: ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryGoal.dir/rule
+
+.PHONY : _ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryGoal
+
+# fast build rule for target.
+_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryGoal/fast:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryGoal.dir/build.make ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryGoal.dir/build
+.PHONY : _ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryGoal/fast
 
 # Convenience name for target.
 ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule:
@@ -421,51 +301,6 @@ trajectory_msgs_generate_messages_lisp/fast:
 .PHONY : trajectory_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-ros_pololu_servo-master/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
-.PHONY : ros_pololu_servo-master/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_cpp: ros_pololu_servo-master/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_cpp
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_cpp/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build.make ros_pololu_servo-master/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build
-.PHONY : actionlib_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-.PHONY : ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_nodejs: ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-
-.PHONY : actionlib_generate_messages_nodejs
-
-# fast build rule for target.
-actionlib_generate_messages_nodejs/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
-.PHONY : actionlib_generate_messages_nodejs/fast
-
-# Convenience name for target.
-ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorState.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorState.dir/rule
-.PHONY : ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorState.dir/rule
-
-# Convenience name for target.
-_ros_pololu_servo_generate_messages_check_deps_MotorState: ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorState.dir/rule
-
-.PHONY : _ros_pololu_servo_generate_messages_check_deps_MotorState
-
-# fast build rule for target.
-_ros_pololu_servo_generate_messages_check_deps_MotorState/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorState.dir/build.make ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorState.dir/build
-.PHONY : _ros_pololu_servo_generate_messages_check_deps_MotorState/fast
-
-# Convenience name for target.
 ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_generate_messages_cpp.dir/rule:
 	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_generate_messages_cpp.dir/rule
 .PHONY : ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_generate_messages_cpp.dir/rule
@@ -481,49 +316,49 @@ ros_pololu_servo_generate_messages_cpp/fast:
 .PHONY : ros_pololu_servo_generate_messages_cpp/fast
 
 # Convenience name for target.
-ros_pololu_servo-master/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-.PHONY : ros_pololu_servo-master/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+ros_pololu_servo-master/CMakeFiles/polstro.dir/rule:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/polstro.dir/rule
+.PHONY : ros_pololu_servo-master/CMakeFiles/polstro.dir/rule
 
 # Convenience name for target.
-geometry_msgs_generate_messages_cpp: ros_pololu_servo-master/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+polstro: ros_pololu_servo-master/CMakeFiles/polstro.dir/rule
 
-.PHONY : geometry_msgs_generate_messages_cpp
+.PHONY : polstro
 
 # fast build rule for target.
-geometry_msgs_generate_messages_cpp/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make ros_pololu_servo-master/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
-.PHONY : geometry_msgs_generate_messages_cpp/fast
+polstro/fast:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/polstro.dir/build.make ros_pololu_servo-master/CMakeFiles/polstro.dir/build
+.PHONY : polstro/fast
 
 # Convenience name for target.
-ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
-.PHONY : ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
+ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorRange.dir/rule:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorRange.dir/rule
+.PHONY : ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorRange.dir/rule
 
 # Convenience name for target.
-trajectory_msgs_generate_messages_cpp: ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
+_ros_pololu_servo_generate_messages_check_deps_MotorRange: ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorRange.dir/rule
 
-.PHONY : trajectory_msgs_generate_messages_cpp
+.PHONY : _ros_pololu_servo_generate_messages_check_deps_MotorRange
 
 # fast build rule for target.
-trajectory_msgs_generate_messages_cpp/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build.make ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build
-.PHONY : trajectory_msgs_generate_messages_cpp/fast
+_ros_pololu_servo_generate_messages_check_deps_MotorRange/fast:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorRange.dir/build.make ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorRange.dir/build
+.PHONY : _ros_pololu_servo_generate_messages_check_deps_MotorRange/fast
 
 # Convenience name for target.
-ros_pololu_servo-master/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-.PHONY : ros_pololu_servo-master/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
+.PHONY : ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-geometry_msgs_generate_messages_lisp: ros_pololu_servo-master/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+trajectory_msgs_generate_messages_eus: ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
 
-.PHONY : geometry_msgs_generate_messages_lisp
+.PHONY : trajectory_msgs_generate_messages_eus
 
 # fast build rule for target.
-geometry_msgs_generate_messages_lisp/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make ros_pololu_servo-master/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
-.PHONY : geometry_msgs_generate_messages_lisp/fast
+trajectory_msgs_generate_messages_eus/fast:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build.make ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build
+.PHONY : trajectory_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryActionGoal.dir/rule:
@@ -556,64 +391,124 @@ ros_pololu_servo_generate_messages_nodejs/fast:
 .PHONY : ros_pololu_servo_generate_messages_nodejs/fast
 
 # Convenience name for target.
-ros_pololu_servo-master/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-.PHONY : ros_pololu_servo-master/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_eus.dir/rule:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_eus.dir/rule
+.PHONY : ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-geometry_msgs_generate_messages_nodejs: ros_pololu_servo-master/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+actionlib_generate_messages_eus: ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_eus.dir/rule
 
-.PHONY : geometry_msgs_generate_messages_nodejs
+.PHONY : actionlib_generate_messages_eus
 
 # fast build rule for target.
-geometry_msgs_generate_messages_nodejs/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make ros_pololu_servo-master/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
-.PHONY : geometry_msgs_generate_messages_nodejs/fast
+actionlib_generate_messages_eus/fast:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_eus.dir/build.make ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_eus.dir/build
+.PHONY : actionlib_generate_messages_eus/fast
 
 # Convenience name for target.
-ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryGoal.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryGoal.dir/rule
-.PHONY : ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryGoal.dir/rule
+ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorState.dir/rule:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorState.dir/rule
+.PHONY : ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorState.dir/rule
 
 # Convenience name for target.
-_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryGoal: ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryGoal.dir/rule
+_ros_pololu_servo_generate_messages_check_deps_MotorState: ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorState.dir/rule
 
-.PHONY : _ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryGoal
+.PHONY : _ros_pololu_servo_generate_messages_check_deps_MotorState
 
 # fast build rule for target.
-_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryGoal/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryGoal.dir/build.make ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryGoal.dir/build
-.PHONY : _ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryGoal/fast
+_ros_pololu_servo_generate_messages_check_deps_MotorState/fast:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorState.dir/build.make ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorState.dir/build
+.PHONY : _ros_pololu_servo_generate_messages_check_deps_MotorState/fast
 
 # Convenience name for target.
-ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorCalibration.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorCalibration.dir/rule
-.PHONY : ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorCalibration.dir/rule
+ros_pololu_servo-master/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
+.PHONY : ros_pololu_servo-master/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-_ros_pololu_servo_generate_messages_check_deps_MotorCalibration: ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorCalibration.dir/rule
+actionlib_msgs_generate_messages_cpp: ros_pololu_servo-master/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
 
-.PHONY : _ros_pololu_servo_generate_messages_check_deps_MotorCalibration
+.PHONY : actionlib_msgs_generate_messages_cpp
 
 # fast build rule for target.
-_ros_pololu_servo_generate_messages_check_deps_MotorCalibration/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorCalibration.dir/build.make ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorCalibration.dir/build
-.PHONY : _ros_pololu_servo_generate_messages_check_deps_MotorCalibration/fast
+actionlib_msgs_generate_messages_cpp/fast:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build.make ros_pololu_servo-master/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build
+.PHONY : actionlib_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryAction.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryAction.dir/rule
-.PHONY : ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryAction.dir/rule
+ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
+.PHONY : ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryAction: ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryAction.dir/rule
+actionlib_generate_messages_nodejs: ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
 
-.PHONY : _ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryAction
+.PHONY : actionlib_generate_messages_nodejs
 
 # fast build rule for target.
-_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryAction/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryAction.dir/build.make ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryAction.dir/build
-.PHONY : _ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryAction/fast
+actionlib_generate_messages_nodejs/fast:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
+.PHONY : actionlib_generate_messages_nodejs/fast
+
+# Convenience name for target.
+ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorCommand.dir/rule:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorCommand.dir/rule
+.PHONY : ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorCommand.dir/rule
+
+# Convenience name for target.
+_ros_pololu_servo_generate_messages_check_deps_MotorCommand: ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorCommand.dir/rule
+
+.PHONY : _ros_pololu_servo_generate_messages_check_deps_MotorCommand
+
+# fast build rule for target.
+_ros_pololu_servo_generate_messages_check_deps_MotorCommand/fast:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorCommand.dir/build.make ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorCommand.dir/build
+.PHONY : _ros_pololu_servo_generate_messages_check_deps_MotorCommand/fast
+
+# Convenience name for target.
+ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_geneus.dir/rule:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_geneus.dir/rule
+.PHONY : ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_geneus.dir/rule
+
+# Convenience name for target.
+ros_pololu_servo_geneus: ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_geneus.dir/rule
+
+.PHONY : ros_pololu_servo_geneus
+
+# fast build rule for target.
+ros_pololu_servo_geneus/fast:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_geneus.dir/build.make ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_geneus.dir/build
+.PHONY : ros_pololu_servo_geneus/fast
+
+# Convenience name for target.
+ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_generate_messages.dir/rule:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_generate_messages.dir/rule
+.PHONY : ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_generate_messages.dir/rule
+
+# Convenience name for target.
+ros_pololu_servo_generate_messages: ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_generate_messages.dir/rule
+
+.PHONY : ros_pololu_servo_generate_messages
+
+# fast build rule for target.
+ros_pololu_servo_generate_messages/fast:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_generate_messages.dir/build.make ros_pololu_servo-master/CMakeFiles/ros_pololu_servo_generate_messages.dir/build
+.PHONY : ros_pololu_servo_generate_messages/fast
+
+# Convenience name for target.
+ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_py.dir/rule:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_py.dir/rule
+.PHONY : ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_py.dir/rule
+
+# Convenience name for target.
+actionlib_generate_messages_py: ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_py.dir/rule
+
+.PHONY : actionlib_generate_messages_py
+
+# fast build rule for target.
+actionlib_generate_messages_py/fast:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_py.dir/build.make ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_py.dir/build
+.PHONY : actionlib_generate_messages_py/fast
 
 # Convenience name for target.
 ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_MotorStateList.dir/rule:
@@ -661,21 +556,6 @@ ros_pololu_servo_gencpp/fast:
 .PHONY : ros_pololu_servo_gencpp/fast
 
 # Convenience name for target.
-ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_lisp.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
-.PHONY : ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_lisp: ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
-
-.PHONY : actionlib_generate_messages_lisp
-
-# fast build rule for target.
-actionlib_generate_messages_lisp/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_lisp.dir/build
-.PHONY : actionlib_generate_messages_lisp/fast
-
-# Convenience name for target.
 ros_pololu_servo-master/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule:
 	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
 .PHONY : ros_pololu_servo-master/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
@@ -689,6 +569,21 @@ actionlib_msgs_generate_messages_eus: ros_pololu_servo-master/CMakeFiles/actionl
 actionlib_msgs_generate_messages_eus/fast:
 	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build.make ros_pololu_servo-master/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build
 .PHONY : actionlib_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_lisp.dir/rule:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
+.PHONY : ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+actionlib_generate_messages_lisp: ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
+
+.PHONY : actionlib_generate_messages_lisp
+
+# fast build rule for target.
+actionlib_generate_messages_lisp/fast:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make ros_pololu_servo-master/CMakeFiles/actionlib_generate_messages_lisp.dir/build
+.PHONY : actionlib_generate_messages_lisp/fast
 
 # Convenience name for target.
 ros_pololu_servo-master/CMakeFiles/_ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryActionResult.dir/rule:
@@ -854,6 +749,36 @@ ros_pololu_servo: ros_pololu_servo-master/CMakeFiles/ros_pololu_servo.dir/rule
 ros_pololu_servo/fast:
 	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/ros_pololu_servo.dir/build.make ros_pololu_servo-master/CMakeFiles/ros_pololu_servo.dir/build
 .PHONY : ros_pololu_servo/fast
+
+# Convenience name for target.
+ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
+.PHONY : ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+trajectory_msgs_generate_messages_nodejs: ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : trajectory_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+trajectory_msgs_generate_messages_nodejs/fast:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build.make ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build
+.PHONY : trajectory_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
+.PHONY : ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+trajectory_msgs_generate_messages_cpp: ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : trajectory_msgs_generate_messages_cpp
+
+# fast build rule for target.
+trajectory_msgs_generate_messages_cpp/fast:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build.make ros_pololu_servo-master/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build
+.PHONY : trajectory_msgs_generate_messages_cpp/fast
 
 src/pololu_controller_node.o: src/pololu_controller_node.cpp.o
 
@@ -1025,57 +950,52 @@ help:
 	@echo "... depend"
 	@echo "... list_install_components"
 	@echo "... install"
-	@echo "... rebuild_cache"
-	@echo "... edit_cache"
-	@echo "... install/strip"
-	@echo "... geometry_msgs_generate_messages_eus"
-	@echo "... polstro"
-	@echo "... ros_pololu_servo_generate_messages"
-	@echo "... actionlib_generate_messages_py"
-	@echo "... actionlib_msgs_generate_messages_lisp"
-	@echo "... _ros_pololu_servo_generate_messages_check_deps_MotorCommand"
-	@echo "... ros_pololu_servo_geneus"
-	@echo "... actionlib_generate_messages_eus"
-	@echo "... install/local"
-	@echo "... trajectory_msgs_generate_messages_nodejs"
-	@echo "... _ros_pololu_servo_generate_messages_check_deps_MotorRange"
-	@echo "... trajectory_msgs_generate_messages_py"
-	@echo "... ros_pololu_servo_generate_messages_py"
-	@echo "... trajectory_msgs_generate_messages_eus"
+	@echo "... _ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryAction"
+	@echo "... _ros_pololu_servo_generate_messages_check_deps_MotorCalibration"
 	@echo "... actionlib_generate_messages_cpp"
 	@echo "... _ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryFeedback"
-	@echo "... geometry_msgs_generate_messages_py"
+	@echo "... actionlib_msgs_generate_messages_lisp"
+	@echo "... trajectory_msgs_generate_messages_py"
+	@echo "... ros_pololu_servo_generate_messages_py"
+	@echo "... _ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryGoal"
 	@echo "... trajectory_msgs_generate_messages_lisp"
-	@echo "... actionlib_msgs_generate_messages_cpp"
-	@echo "... actionlib_generate_messages_nodejs"
-	@echo "... _ros_pololu_servo_generate_messages_check_deps_MotorState"
 	@echo "... ros_pololu_servo_generate_messages_cpp"
-	@echo "... test"
-	@echo "... geometry_msgs_generate_messages_cpp"
-	@echo "... trajectory_msgs_generate_messages_cpp"
-	@echo "... geometry_msgs_generate_messages_lisp"
+	@echo "... polstro"
+	@echo "... _ros_pololu_servo_generate_messages_check_deps_MotorRange"
+	@echo "... trajectory_msgs_generate_messages_eus"
 	@echo "... _ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryActionGoal"
 	@echo "... ros_pololu_servo_generate_messages_nodejs"
-	@echo "... geometry_msgs_generate_messages_nodejs"
-	@echo "... _ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryGoal"
-	@echo "... _ros_pololu_servo_generate_messages_check_deps_MotorCalibration"
-	@echo "... _ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryAction"
+	@echo "... actionlib_generate_messages_eus"
+	@echo "... _ros_pololu_servo_generate_messages_check_deps_MotorState"
+	@echo "... actionlib_msgs_generate_messages_cpp"
+	@echo "... actionlib_generate_messages_nodejs"
+	@echo "... _ros_pololu_servo_generate_messages_check_deps_MotorCommand"
+	@echo "... ros_pololu_servo_geneus"
+	@echo "... rebuild_cache"
+	@echo "... ros_pololu_servo_generate_messages"
+	@echo "... actionlib_generate_messages_py"
 	@echo "... _ros_pololu_servo_generate_messages_check_deps_MotorStateList"
 	@echo "... actionlib_msgs_generate_messages_py"
 	@echo "... ros_pololu_servo_gencpp"
-	@echo "... actionlib_generate_messages_lisp"
 	@echo "... actionlib_msgs_generate_messages_eus"
+	@echo "... actionlib_generate_messages_lisp"
 	@echo "... _ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryActionResult"
 	@echo "... _ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryResult"
 	@echo "... ros_pololu_servo_generate_messages_eus"
 	@echo "... _ros_pololu_servo_generate_messages_check_deps_pololu_trajectoryActionFeedback"
 	@echo "... ros_pololu_servo_node"
 	@echo "... ros_pololu_servo_gennodejs"
+	@echo "... edit_cache"
 	@echo "... ros_pololu_servo_generate_messages_lisp"
 	@echo "... ros_pololu_servo_genlisp"
 	@echo "... ros_pololu_servo_genpy"
 	@echo "... actionlib_msgs_generate_messages_nodejs"
 	@echo "... ros_pololu_servo"
+	@echo "... install/strip"
+	@echo "... trajectory_msgs_generate_messages_nodejs"
+	@echo "... install/local"
+	@echo "... trajectory_msgs_generate_messages_cpp"
+	@echo "... test"
 	@echo "... src/pololu_controller_node.o"
 	@echo "... src/pololu_controller_node.i"
 	@echo "... src/pololu_controller_node.s"

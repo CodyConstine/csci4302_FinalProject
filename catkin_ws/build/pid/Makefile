@@ -56,28 +56,27 @@ CMAKE_BINARY_DIR = /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
+.PHONY : edit_cache/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
 
-.PHONY : rebuild_cache/fast
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -90,16 +89,16 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
 
-# Special rule for the target test
-test/fast: test
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
 
-.PHONY : test/fast
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target list_install_components
 list_install_components:
@@ -122,16 +121,17 @@ install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -181,51 +181,6 @@ autotune/fast:
 .PHONY : autotune/fast
 
 # Convenience name for target.
-pid/CMakeFiles/sim_time.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/sim_time.dir/rule
-.PHONY : pid/CMakeFiles/sim_time.dir/rule
-
-# Convenience name for target.
-sim_time: pid/CMakeFiles/sim_time.dir/rule
-
-.PHONY : sim_time
-
-# fast build rule for target.
-sim_time/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f pid/CMakeFiles/sim_time.dir/build.make pid/CMakeFiles/sim_time.dir/build
-.PHONY : sim_time/fast
-
-# Convenience name for target.
-pid/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
-.PHONY : pid/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-diagnostic_msgs_generate_messages_py: pid/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
-
-.PHONY : diagnostic_msgs_generate_messages_py
-
-# fast build rule for target.
-diagnostic_msgs_generate_messages_py/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f pid/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build.make pid/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build
-.PHONY : diagnostic_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-pid/CMakeFiles/setpoint_node.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/setpoint_node.dir/rule
-.PHONY : pid/CMakeFiles/setpoint_node.dir/rule
-
-# Convenience name for target.
-setpoint_node: pid/CMakeFiles/setpoint_node.dir/rule
-
-.PHONY : setpoint_node
-
-# fast build rule for target.
-setpoint_node/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f pid/CMakeFiles/setpoint_node.dir/build.make pid/CMakeFiles/setpoint_node.dir/build
-.PHONY : setpoint_node/fast
-
-# Convenience name for target.
 pid/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/rule:
 	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/rule
 .PHONY : pid/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/rule
@@ -271,349 +226,34 @@ diagnostic_msgs_generate_messages_eus/fast:
 .PHONY : diagnostic_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
-pid/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-.PHONY : pid/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+pid/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
+.PHONY : pid/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_eus: pid/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+diagnostic_msgs_generate_messages_cpp: pid/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_eus
+.PHONY : diagnostic_msgs_generate_messages_cpp
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_eus/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f pid/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make pid/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
-.PHONY : rosgraph_msgs_generate_messages_eus/fast
+diagnostic_msgs_generate_messages_cpp/fast:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f pid/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/build.make pid/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/build
+.PHONY : diagnostic_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-pid/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-.PHONY : pid/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+pid/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
+.PHONY : pid/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_nodejs: pid/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+diagnostic_msgs_generate_messages_py: pid/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_nodejs
+.PHONY : diagnostic_msgs_generate_messages_py
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_nodejs/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f pid/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make pid/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
-.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-pid/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-.PHONY : pid/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_cpp: pid/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-.PHONY : roscpp_generate_messages_cpp
-
-# fast build rule for target.
-roscpp_generate_messages_cpp/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f pid/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make pid/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-.PHONY : roscpp_generate_messages_cpp/fast
-
-# Convenience name for target.
-pid/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-.PHONY : pid/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_cpp: pid/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_cpp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_cpp/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f pid/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make pid/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-pid/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-.PHONY : pid/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_cpp: pid/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : std_msgs_generate_messages_cpp
-
-# fast build rule for target.
-std_msgs_generate_messages_cpp/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f pid/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make pid/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
-.PHONY : std_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-pid/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-.PHONY : pid/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_py: pid/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_py
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_py/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f pid/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make pid/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
-.PHONY : rosgraph_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-pid/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-.PHONY : pid/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_lisp: pid/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_lisp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_lisp/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f pid/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make pid/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-pid/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-.PHONY : pid/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_nodejs: pid/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-.PHONY : roscpp_generate_messages_nodejs
-
-# fast build rule for target.
-roscpp_generate_messages_nodejs/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f pid/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make pid/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
-.PHONY : roscpp_generate_messages_nodejs/fast
-
-# Convenience name for target.
-pid/CMakeFiles/pid_gencfg.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/pid_gencfg.dir/rule
-.PHONY : pid/CMakeFiles/pid_gencfg.dir/rule
-
-# Convenience name for target.
-pid_gencfg: pid/CMakeFiles/pid_gencfg.dir/rule
-
-.PHONY : pid_gencfg
-
-# fast build rule for target.
-pid_gencfg/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f pid/CMakeFiles/pid_gencfg.dir/build.make pid/CMakeFiles/pid_gencfg.dir/build
-.PHONY : pid_gencfg/fast
-
-# Convenience name for target.
-pid/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-.PHONY : pid/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_py: pid/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-
-.PHONY : std_msgs_generate_messages_py
-
-# fast build rule for target.
-std_msgs_generate_messages_py/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f pid/CMakeFiles/std_msgs_generate_messages_py.dir/build.make pid/CMakeFiles/std_msgs_generate_messages_py.dir/build
-.PHONY : std_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-pid/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule
-.PHONY : pid/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-dynamic_reconfigure_generate_messages_nodejs: pid/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule
-
-.PHONY : dynamic_reconfigure_generate_messages_nodejs
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_nodejs/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f pid/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build.make pid/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_nodejs/fast
-
-# Convenience name for target.
-pid/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-.PHONY : pid/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_nodejs: pid/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : std_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-std_msgs_generate_messages_nodejs/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f pid/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make pid/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
-.PHONY : std_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-pid/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-.PHONY : pid/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_lisp: pid/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : std_msgs_generate_messages_lisp
-
-# fast build rule for target.
-std_msgs_generate_messages_lisp/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f pid/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make pid/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-.PHONY : std_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-pid/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-.PHONY : pid/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_lisp: pid/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-.PHONY : roscpp_generate_messages_lisp
-
-# fast build rule for target.
-roscpp_generate_messages_lisp/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f pid/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make pid/CMakeFiles/roscpp_generate_messages_lisp.dir/build
-.PHONY : roscpp_generate_messages_lisp/fast
-
-# Convenience name for target.
-pid/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-.PHONY : pid/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_eus: pid/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-
-.PHONY : std_msgs_generate_messages_eus
-
-# fast build rule for target.
-std_msgs_generate_messages_eus/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f pid/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make pid/CMakeFiles/std_msgs_generate_messages_eus.dir/build
-.PHONY : std_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-pid/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
-.PHONY : pid/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-dynamic_reconfigure_generate_messages_lisp: pid/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
-
-.PHONY : dynamic_reconfigure_generate_messages_lisp
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_lisp/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f pid/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build.make pid/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_lisp/fast
-
-# Convenience name for target.
-pid/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-.PHONY : pid/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_eus: pid/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-.PHONY : roscpp_generate_messages_eus
-
-# fast build rule for target.
-roscpp_generate_messages_eus/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f pid/CMakeFiles/roscpp_generate_messages_eus.dir/build.make pid/CMakeFiles/roscpp_generate_messages_eus.dir/build
-.PHONY : roscpp_generate_messages_eus/fast
-
-# Convenience name for target.
-pid/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
-.PHONY : pid/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-dynamic_reconfigure_generate_messages_cpp: pid/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
-
-.PHONY : dynamic_reconfigure_generate_messages_cpp
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_cpp/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f pid/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build.make pid/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_cpp/fast
-
-# Convenience name for target.
-pid/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/rule
-.PHONY : pid/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-dynamic_reconfigure_generate_messages_eus: pid/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/rule
-
-.PHONY : dynamic_reconfigure_generate_messages_eus
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_eus/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f pid/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/build.make pid/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_eus/fast
-
-# Convenience name for target.
-pid/CMakeFiles/plant_sim.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/plant_sim.dir/rule
-.PHONY : pid/CMakeFiles/plant_sim.dir/rule
-
-# Convenience name for target.
-plant_sim: pid/CMakeFiles/plant_sim.dir/rule
-
-.PHONY : plant_sim
-
-# fast build rule for target.
-plant_sim/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f pid/CMakeFiles/plant_sim.dir/build.make pid/CMakeFiles/plant_sim.dir/build
-.PHONY : plant_sim/fast
-
-# Convenience name for target.
-pid/CMakeFiles/roscpp_generate_messages_py.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/roscpp_generate_messages_py.dir/rule
-.PHONY : pid/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_py: pid/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-.PHONY : roscpp_generate_messages_py
-
-# fast build rule for target.
-roscpp_generate_messages_py/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f pid/CMakeFiles/roscpp_generate_messages_py.dir/build.make pid/CMakeFiles/roscpp_generate_messages_py.dir/build
-.PHONY : roscpp_generate_messages_py/fast
-
-# Convenience name for target.
-pid/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule
-.PHONY : pid/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule
-
-# Convenience name for target.
-dynamic_reconfigure_generate_messages_py: pid/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule
-
-.PHONY : dynamic_reconfigure_generate_messages_py
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_py/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f pid/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build.make pid/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_py/fast
-
-# Convenience name for target.
-pid/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule
-.PHONY : pid/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule
-
-# Convenience name for target.
-dynamic_reconfigure_gencfg: pid/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule
-
-.PHONY : dynamic_reconfigure_gencfg
-
-# fast build rule for target.
-dynamic_reconfigure_gencfg/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f pid/CMakeFiles/dynamic_reconfigure_gencfg.dir/build.make pid/CMakeFiles/dynamic_reconfigure_gencfg.dir/build
-.PHONY : dynamic_reconfigure_gencfg/fast
+diagnostic_msgs_generate_messages_py/fast:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f pid/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build.make pid/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build
+.PHONY : diagnostic_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 pid/CMakeFiles/controller.dir/rule:
@@ -631,19 +271,64 @@ controller/fast:
 .PHONY : controller/fast
 
 # Convenience name for target.
-pid/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
-.PHONY : pid/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
+pid/CMakeFiles/sim_time.dir/rule:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/sim_time.dir/rule
+.PHONY : pid/CMakeFiles/sim_time.dir/rule
 
 # Convenience name for target.
-diagnostic_msgs_generate_messages_cpp: pid/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
+sim_time: pid/CMakeFiles/sim_time.dir/rule
 
-.PHONY : diagnostic_msgs_generate_messages_cpp
+.PHONY : sim_time
 
 # fast build rule for target.
-diagnostic_msgs_generate_messages_cpp/fast:
-	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f pid/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/build.make pid/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/build
-.PHONY : diagnostic_msgs_generate_messages_cpp/fast
+sim_time/fast:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f pid/CMakeFiles/sim_time.dir/build.make pid/CMakeFiles/sim_time.dir/build
+.PHONY : sim_time/fast
+
+# Convenience name for target.
+pid/CMakeFiles/setpoint_node.dir/rule:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/setpoint_node.dir/rule
+.PHONY : pid/CMakeFiles/setpoint_node.dir/rule
+
+# Convenience name for target.
+setpoint_node: pid/CMakeFiles/setpoint_node.dir/rule
+
+.PHONY : setpoint_node
+
+# fast build rule for target.
+setpoint_node/fast:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f pid/CMakeFiles/setpoint_node.dir/build.make pid/CMakeFiles/setpoint_node.dir/build
+.PHONY : setpoint_node/fast
+
+# Convenience name for target.
+pid/CMakeFiles/pid_gencfg.dir/rule:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/pid_gencfg.dir/rule
+.PHONY : pid/CMakeFiles/pid_gencfg.dir/rule
+
+# Convenience name for target.
+pid_gencfg: pid/CMakeFiles/pid_gencfg.dir/rule
+
+.PHONY : pid_gencfg
+
+# fast build rule for target.
+pid_gencfg/fast:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f pid/CMakeFiles/pid_gencfg.dir/build.make pid/CMakeFiles/pid_gencfg.dir/build
+.PHONY : pid_gencfg/fast
+
+# Convenience name for target.
+pid/CMakeFiles/plant_sim.dir/rule:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pid/CMakeFiles/plant_sim.dir/rule
+.PHONY : pid/CMakeFiles/plant_sim.dir/rule
+
+# Convenience name for target.
+plant_sim: pid/CMakeFiles/plant_sim.dir/rule
+
+.PHONY : plant_sim
+
+# fast build rule for target.
+plant_sim/fast:
+	cd /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/build && $(MAKE) -f pid/CMakeFiles/plant_sim.dir/build.make pid/CMakeFiles/plant_sim.dir/build
+.PHONY : plant_sim/fast
 
 src/autotune.o: src/autotune.cpp.o
 
@@ -786,45 +471,24 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install"
-	@echo "... rebuild_cache"
-	@echo "... install/local"
-	@echo "... autotune"
+	@echo "... edit_cache"
 	@echo "... test"
-	@echo "... sim_time"
-	@echo "... diagnostic_msgs_generate_messages_py"
-	@echo "... setpoint_node"
+	@echo "... install/local"
+	@echo "... rebuild_cache"
+	@echo "... autotune"
 	@echo "... diagnostic_msgs_generate_messages_nodejs"
 	@echo "... list_install_components"
+	@echo "... install/strip"
 	@echo "... diagnostic_msgs_generate_messages_lisp"
 	@echo "... diagnostic_msgs_generate_messages_eus"
-	@echo "... rosgraph_msgs_generate_messages_eus"
-	@echo "... rosgraph_msgs_generate_messages_nodejs"
-	@echo "... roscpp_generate_messages_cpp"
-	@echo "... rosgraph_msgs_generate_messages_cpp"
-	@echo "... std_msgs_generate_messages_cpp"
-	@echo "... rosgraph_msgs_generate_messages_py"
-	@echo "... rosgraph_msgs_generate_messages_lisp"
-	@echo "... roscpp_generate_messages_nodejs"
-	@echo "... pid_gencfg"
-	@echo "... std_msgs_generate_messages_py"
-	@echo "... dynamic_reconfigure_generate_messages_nodejs"
-	@echo "... std_msgs_generate_messages_nodejs"
-	@echo "... std_msgs_generate_messages_lisp"
-	@echo "... roscpp_generate_messages_lisp"
-	@echo "... std_msgs_generate_messages_eus"
-	@echo "... dynamic_reconfigure_generate_messages_lisp"
-	@echo "... roscpp_generate_messages_eus"
-	@echo "... dynamic_reconfigure_generate_messages_cpp"
-	@echo "... install/strip"
-	@echo "... dynamic_reconfigure_generate_messages_eus"
-	@echo "... plant_sim"
-	@echo "... roscpp_generate_messages_py"
-	@echo "... dynamic_reconfigure_generate_messages_py"
-	@echo "... edit_cache"
-	@echo "... dynamic_reconfigure_gencfg"
-	@echo "... controller"
+	@echo "... install"
 	@echo "... diagnostic_msgs_generate_messages_cpp"
+	@echo "... diagnostic_msgs_generate_messages_py"
+	@echo "... controller"
+	@echo "... sim_time"
+	@echo "... setpoint_node"
+	@echo "... pid_gencfg"
+	@echo "... plant_sim"
 	@echo "... src/autotune.o"
 	@echo "... src/autotune.i"
 	@echo "... src/autotune.s"
