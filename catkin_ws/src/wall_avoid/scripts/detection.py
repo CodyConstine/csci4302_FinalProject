@@ -65,7 +65,7 @@ class wall_avoid():
     def subCallback_Driving_Control(self, msg):
         # turn_ratio = .6*(msg.data*self.front_mult/100)
         self.front_previous = msg.data
-        self.cmd_driving.position = 0
+        self.cmd_driving.position = .5*(msg.data/100)
         self.motor_driving_pub.publish(self.cmd_driving)
     #callback for the pololu motor states, will take the side ir pulse and feed it to the pid controller
     def subCallback_Turning(self, msg):
