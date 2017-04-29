@@ -23,8 +23,8 @@ class wall_avoid():
         self.motor_driving_pub = rospy.Publisher('pololu/command', MotorCommand, queue_size=1)
         self.cmd_driving = MotorCommand()
         self.cmd_driving.joint_name = 'back_motor'
-        self.cmd_driving.speed = 0
-        self.cmd_driving.acceleration = 0
+        self.cmd_driving.speed = 1
+        self.cmd_driving.acceleration = 1
         #Publisher for sending the state_turning to the PID controller
         self.state_turning_pub = rospy.Publisher('/turning_PID/state', Float64, queue_size=1)
         self.state_turning = Float64()
@@ -47,14 +47,14 @@ class wall_avoid():
         self.sub_driving_control = rospy.Subscriber('/driving_PID/control_effort', Float64, self.subCallback_Driving_Control, queue_size=1)
         #this block is to send the desired setpoint
         self.setpoint_turning = 130
-        self.setpoint_driving = 100
+        self.setpoint_driving = 120
 
         self.front_previous = 0
 
-        self.ratio_Max = .6
+        self.ratio_Max = 1
     #callback for the control_effort, will turn the control_effort data on -100 to 100 and scale our maximum radians of .6
     def subCallback_Turning_Control(self, msg):
-        turn_ratio = self.ratio_Max*(msg.data/100)*(1+self.front_previous/-100)
+        turn_ratio = self.ratio_Max*(msg.data/100.0)*(1.0+(self.front_previous-15.0)/-35.0)
         if(turn_ratio>self.ratio_Max):
             turn_ratio = self.ratio_Max
         if(turn_ratio<(-1*self.ratio_Max)):
@@ -65,7 +65,12 @@ class wall_avoid():
     def subCallback_Driving_Control(self, msg):
         # turn_ratio = .6*(msg.data*self.front_mult/100)
         self.front_previous = msg.data
-        self.cmd_driving.position = .5*(msg.data/100)
+        temp = 1*(msg.data/100)
+        if(temp<-.5):
+            temp= -.5
+        temp = 0
+        self.cmd_driving.position = temp
+
         self.motor_driving_pub.publish(self.cmd_driving)
     #callback for the pololu motor states, will take the side ir pulse and feed it to the pid controller
     def subCallback_Turning(self, msg):
