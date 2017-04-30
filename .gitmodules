@@ -1,3 +1,12 @@
 [submodule "catkin_ws/src/ORB_SLAM2"]
 	path = catkin_ws/src/ORB_SLAM2
 	url = https://github.com/raulmur/ORB_SLAM2.git
+[submodule "catkin_ws/src/Pangolin"]
+	path = catkin_ws/src/Pangolin
+	url = https://github.com/stevenlovegrove/Pangolin.git
+[submodule "catkin_ws/src/pid"]
+	path = catkin_ws/src/pid
+	url = https://bitbucket.org/AndyZe/pid.git
+[submodule "catkin_ws/src/libuvc_ros"]
+	path = catkin_ws/src/libuvc_ros
+	url = https://github.com/AdvancedRoboticsCUBoulder/libuvc_ros.git
