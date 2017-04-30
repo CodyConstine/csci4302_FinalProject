@@ -1,2 +1,0 @@
-libuvc_ros/libuvc_camera:libuvc_ros/libuvc_ros:pid:ros_pololu_servo-master:wall_avoid
--DCATKIN_DEVEL_PREFIX=/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/install -G Unix Makefiles
