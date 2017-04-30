@@ -1,0 +1,3 @@
+[submodule "catkin_ws/src/ORB_SLAM"]
+	path = catkin_ws/src/ORB_SLAM
+	url = https://github.com/raulmur/ORB_SLAM2.git
