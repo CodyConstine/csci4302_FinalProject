@@ -30,7 +30,9 @@ class wall_avoid():
         #Subscriber for the PID control msgs
         self.sub_turning_control = rospy.Subscriber('/turning_PID/control_effort', Float64, self.subCallback_Turning_Control, queue_size=1)
         #Subscriber for the PID control msgs
-        self.sub_driving_control = rospy.Subscriber('/driving_PID/control_effort', Float64, self.subCallback_Driving_Control, queue_size=1)
+        self.sub_driving_control = rospy.Subscriber('/driving_PID/control_effort', Float64, self.subFront_PID, queue_size=1)
+        #Subscriber for the IMU control msgs
+        self.sub_driving_throttle = rospy.Subscriber('/throttle/effort', Float64, self.subCallback_Driving_Control, queue_size=1)
 
         #this block is to send the desired setpoint
         self.setpoint_turning = 130
