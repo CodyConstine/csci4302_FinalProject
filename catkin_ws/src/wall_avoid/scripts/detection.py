@@ -11,8 +11,8 @@ from ros_pololu_servo.msg import MotorStateList
 #TODO create a v to x function
 
 class wall_avoid():
-
     def __init__(self):
+        self.timeVar = 5e9
         #Publisher for sending commands to the pololu
         self.motor_turning_pub = rospy.Publisher('pololu/command', MotorCommand, queue_size=1)
         self.cmd_turning = MotorCommand()
@@ -73,11 +73,13 @@ class wall_avoid():
         throttle = .175
         now = rospy.get_rostime().nsecs + rospy.get_rostime().secs*10e9
         # print(str(self.last+5e8)+":"+str(now));
-        if(self.last+5e8<now):
+        if(self.last+self.timeVar<now):
             self.last = now
             if(self.stop):
+                self.timeVar = 15e9
                 self.stop = False
             else:
+                self.timeVar = 5e9
                 self.stop = True
             print(self.stop);
         if(self.stop):
