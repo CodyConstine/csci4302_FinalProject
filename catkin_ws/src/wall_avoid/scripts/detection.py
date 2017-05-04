@@ -52,6 +52,8 @@ class wall_avoid():
         self.front_previous = 0
 
         self.ratio_Max = 1
+        self.last = rospy.get_rostime().nsecs
+        self.stop = False
     #callback for the control_effort, will turn the control_effort data on -100 to 100 and scale our maximum radians of .6
     def subCallback_Turning_Control(self, msg):
         turn_ratio = self.ratio_Max*(msg.data/100.0)*(1.0+(self.front_previous-15.0)/-35.0)
@@ -65,11 +67,22 @@ class wall_avoid():
     def subCallback_Driving_Control(self, msg):
         # turn_ratio = .6*(msg.data*self.front_mult/100)
         self.front_previous = msg.data
-        temp = 1*(msg.data/100)
-        if(temp<-.5):
-            temp= -.5
-        temp = 0
-        self.cmd_driving.position = temp
+        throttle = 1*(msg.data/100)
+        if(throttle<-.5):
+            throttle= -.5
+        throttle = .175
+        now = rospy.get_rostime().nsecs + rospy.get_rostime().secs*10e9
+        # print(str(self.last+5e8)+":"+str(now));
+        if(self.last+5e8<now):
+            self.last = now
+            if(self.stop):
+                self.stop = False
+            else:
+                self.stop = True
+            print(self.stop);
+        if(self.stop):
+            throttle = 0
+        self.cmd_driving.position = throttle
 
         self.motor_driving_pub.publish(self.cmd_driving)
     #callback for the pololu motor states, will take the side ir pulse and feed it to the pid controller
@@ -83,7 +96,6 @@ class wall_avoid():
                 self.state_driving = x.pulse
                 self.setpoint_driving_pub.publish(self.setpoint_driving)
                 self.state_driving_pub.publish(self.state_driving)
-
 
 if __name__ == "__main__":
     rospy.init_node('wall_avoid')

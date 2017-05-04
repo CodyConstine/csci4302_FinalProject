@@ -1,0 +1,8 @@
+prefix=/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/devel
+
+Name: carl_bringup
+Description: Description of carl_bringup
+Version: 0.0.34
+Cflags: 
+Libs: -L/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/devel/lib 
+Requires: 
