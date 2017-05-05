@@ -23,7 +23,7 @@ class IMU_reader():
         self.output = []
         self.ALPHA = 0.15
     def imuCallBack(self,msg):
-        out = self.lowPassFilter(msg.linear_acceleration.y)
+        out = self.lowPassFilter(msg.linear_acceleration.y+msg.linear_acceleration.x)
         pub = 1
         if(out>10):
             pub = 0
