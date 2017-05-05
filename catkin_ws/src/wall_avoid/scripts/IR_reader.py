@@ -44,6 +44,6 @@ class IR_reader():
                 self.setpoint_driving_pub.publish(self.setpoint_driving)
                 self.state_driving_pub.publish(self.state_driving)
 if __name__ == "__main__":
-    rospy.init_node('wall_avoid_IR')
+    rospy.init_node('IR_reader')
     ir = IR_reader()
     rospy.spin()

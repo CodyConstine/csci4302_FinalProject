@@ -11,7 +11,7 @@ from sensor_msgs.msg import Imu
 
 #TODO create a v to x function
 
-class wall_avoid():
+class Motor_Controller():
     def __init__(self):
         self.timeVar = 5e9
         #Publisher for sending commands to the pololu
@@ -81,6 +81,6 @@ class wall_avoid():
         self.motor_driving_pub.publish(self.cmd_driving)
 
 if __name__ == "__main__":
-    rospy.init_node('wall_avoid')
-    wall = wall_avoid()
+    rospy.init_node('Motor_Controller')
+    wall = Motor_Controller()
     rospy.spin()

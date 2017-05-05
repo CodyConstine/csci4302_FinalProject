@@ -45,6 +45,6 @@ class IMU_reader():
         return self.output[n-1]
 
 if __name__ == "__main__":
-    rospy.init_node('wall_avoid_IMU')
+    rospy.init_node('IMU_reader')
     imu = IMU_reader()
     rospy.spin()

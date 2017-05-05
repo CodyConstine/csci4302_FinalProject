@@ -1,0 +1,8 @@
+<launch>
+    <node name="IMU_reader" pkg="wall_avoid" type="IMU_reader.py" output="screen" >
+    </node>
+    <node name="IR_reader" pkg="wall_avoid" type="IR_reader.py" output="screen" >
+    </node>
+    <node name="Motor_Controller" pkg="wall_avoid" type="Motor_Controller.py" output="screen" >
+    </node>
+</launch>
