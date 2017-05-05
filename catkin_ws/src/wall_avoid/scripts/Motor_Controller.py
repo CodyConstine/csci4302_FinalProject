@@ -56,23 +56,26 @@ class wall_avoid():
         self.front_previous = msg.data
     #callback for the control_effort, will turn the control_effort data on -100 to 100 and scale our maximum radians of .6
     def subCallback_Driving_Control(self, msg):
-        throttle = 1*(msg.data/100)
-        if(throttle<-.5):
-            throttle= -.5
-        throttle = .175
-        now = rospy.get_rostime().nsecs + rospy.get_rostime().secs*10e9
-        # print(str(self.last+5e8)+":"+str(now));
-        if(self.last+self.timeVar<now):
-            self.last = now
-            if(self.stop):
-                self.timeVar = 15e9
-                self.stop = False
-            else:
-                self.timeVar = 5e9
-                self.stop = True
-            print(self.stop);
-        if(self.stop):
-            throttle = 0
+        # throttle = 1*(msg.data/100)
+        # if(throttle<-.5):
+        #     throttle= -.5
+        # throttle = .175
+        throttle = 0
+        if(msg.data == 1):
+            throttle = .175
+        # now = rospy.get_rostime().nsecs + rospy.get_rostime().secs*10e9
+        # # print(str(self.last+5e8)+":"+str(now));
+        # if(self.last+self.timeVar<now):
+        #     self.last = now
+        #     if(self.stop):
+        #         self.timeVar = 15e9
+        #         self.stop = False
+        #     else:
+        #         self.timeVar = 5e9
+        #         self.stop = True
+        #     print(self.stop);
+        # if(self.stop):
+        #     throttle = 0
         self.cmd_driving.position = throttle
 
         self.motor_driving_pub.publish(self.cmd_driving)
