@@ -45,12 +45,27 @@ class IMU_reader():
         self.windowSize = len(self.taps)
 
         self.buffer = [0]*self.windowSize
-        print self.windowSize
+        self.output = []
+    #print self.windowSize
 
+        self.lastTime  =0
+        self.e = .3
     def imuCallBack(self,msg):
         out = self.lowPassFilter(msg.linear_acceleration.y)
+        nowTime = msg.header.stamp.nsecs+msg.header.stamp.secs*1e9
+        a = self.output[self.windowSize-1]
+        b = self.output[self.windowSize-2]
+        if(self.output[self.windowSize-1]<=self.e):
+            a = 0
+            b = 0
+        if(self.lastTime == 0):
+            self.lastTime = nowTime
+            return
+        out = (nowTime-self.lastTime)*(.5*(a+b))
+        out = out/1e9
         pub = 0
-        if(out < 1):
+        print out
+        if(out < 30):
             pub =1
         self.state_driving = pub
         self.state_driving_pub.publish(self.state_driving)

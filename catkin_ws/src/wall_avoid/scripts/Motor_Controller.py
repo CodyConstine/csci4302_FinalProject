@@ -40,12 +40,13 @@ class Motor_Controller():
 
         self.front_previous = 0
 
-        self.ratio_Max = 1
+        self.ratio_Max = .6
         self.last = rospy.get_rostime().nsecs
         self.stop = False
     #callback for the control_effort, will turn the control_effort data on -100 to 100 and scale our maximum radians of .6
     def subCallback_Turning_Control(self, msg):
-        turn_ratio = self.ratio_Max*(msg.data/100.0)*(1.0+(self.front_previous-15.0)/-35.0)
+        turn_ratio = self.ratio_Max*(msg.data/100.0)
+        # print(msg.data)
         if(turn_ratio>self.ratio_Max):
             turn_ratio = self.ratio_Max
         if(turn_ratio<(-1*self.ratio_Max)):
@@ -60,6 +61,7 @@ class Motor_Controller():
         # if(throttle<-.5):
         #     throttle= -.5
         # throttle = .175
+        # print(msg.data)
         throttle = 0
         if(msg.data == 1):
             throttle = .175
