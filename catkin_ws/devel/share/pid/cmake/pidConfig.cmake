@@ -67,14 +67,14 @@ set(pid_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(pid_SOURCE_PREFIX /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/src/pid)
-  set(pid_DEVEL_PREFIX /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/devel)
+  set(pid_SOURCE_PREFIX /home/user/Desktop/csci4302_FinalProject/catkin_ws/src/pid)
+  set(pid_DEVEL_PREFIX /home/user/Desktop/csci4302_FinalProject/catkin_ws/devel)
   set(pid_INSTALL_PREFIX "")
   set(pid_PREFIX ${pid_DEVEL_PREFIX})
 else()
   set(pid_SOURCE_PREFIX "")
   set(pid_DEVEL_PREFIX "")
-  set(pid_INSTALL_PREFIX /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/install)
+  set(pid_INSTALL_PREFIX /home/user/Desktop/csci4302_FinalProject/catkin_ws/install)
   set(pid_PREFIX ${pid_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(pid_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/devel/include;/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/src/pid/include " STREQUAL " ")
+if(NOT "/home/user/Desktop/csci4302_FinalProject/catkin_ws/devel/include;/home/user/Desktop/csci4302_FinalProject/catkin_ws/src/pid/include " STREQUAL " ")
   set(pid_INCLUDE_DIRS "")
-  set(_include_dirs "/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/devel/include;/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/src/pid/include")
+  set(_include_dirs "/home/user/Desktop/csci4302_FinalProject/catkin_ws/devel/include;/home/user/Desktop/csci4302_FinalProject/catkin_ws/src/pid/include")
   foreach(idir ${_include_dirs})
     if(IS_ABSOLUTE ${idir} AND IS_DIRECTORY ${idir})
       set(include ${idir})
@@ -103,7 +103,7 @@ if(NOT "/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/devel/include;/home/c
         message(FATAL_ERROR "Project 'pid' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  Ask the maintainer 'Andy Zelenak <andyz@utexas.edu>' to fix it.")
       endif()
     else()
-      message(FATAL_ERROR "Project 'pid' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/src/pid/${idir}'.  Ask the maintainer 'Andy Zelenak <andyz@utexas.edu>' to fix it.")
+      message(FATAL_ERROR "Project 'pid' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/user/Desktop/csci4302_FinalProject/catkin_ws/src/pid/${idir}'.  Ask the maintainer 'Andy Zelenak <andyz@utexas.edu>' to fix it.")
     endif()
     _list_append_unique(pid_INCLUDE_DIRS ${include})
   endforeach()
@@ -122,7 +122,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/devel/lib;/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/devel/lib;/home/cody/Dropbox/advanced_robotics/coco3090/Homework3/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/user/Desktop/csci4302_FinalProject/catkin_ws/devel/lib;/home/user/Desktop/csci4302_FinalProject/catkin_ws/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

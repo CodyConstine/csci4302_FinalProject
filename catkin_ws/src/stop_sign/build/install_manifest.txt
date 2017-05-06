@@ -1,0 +1,10 @@
+/usr/local/_setup_util.py
+/usr/local/env.sh
+/usr/local/setup.bash
+/usr/local/setup.sh
+/usr/local/setup.zsh
+/usr/local/.rosinstall
+/usr/local/lib/pkgconfig/stop_sign.pc
+/usr/local/share/stop_sign/cmake/stop_signConfig.cmake
+/usr/local/share/stop_sign/cmake/stop_signConfig-version.cmake
+/usr/local/share/stop_sign/package.xml

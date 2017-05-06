@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/user/Desktop/csci4302_FinalProject/catkin_ws/src/stop_sign/build/devel/setup.sh
