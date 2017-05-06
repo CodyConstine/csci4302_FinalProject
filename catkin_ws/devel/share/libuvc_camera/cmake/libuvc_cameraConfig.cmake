@@ -67,14 +67,14 @@ set(libuvc_camera_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(libuvc_camera_SOURCE_PREFIX /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/src/libuvc_ros/libuvc_camera)
-  set(libuvc_camera_DEVEL_PREFIX /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/devel)
+  set(libuvc_camera_SOURCE_PREFIX /home/user/Desktop/csci4302_FinalProject/catkin_ws/src/libuvc_ros/libuvc_camera)
+  set(libuvc_camera_DEVEL_PREFIX /home/user/Desktop/csci4302_FinalProject/catkin_ws/devel)
   set(libuvc_camera_INSTALL_PREFIX "")
   set(libuvc_camera_PREFIX ${libuvc_camera_DEVEL_PREFIX})
 else()
   set(libuvc_camera_SOURCE_PREFIX "")
   set(libuvc_camera_DEVEL_PREFIX "")
-  set(libuvc_camera_INSTALL_PREFIX /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/install)
+  set(libuvc_camera_INSTALL_PREFIX /home/user/Desktop/csci4302_FinalProject/catkin_ws/install)
   set(libuvc_camera_PREFIX ${libuvc_camera_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(libuvc_camera_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/devel/include " STREQUAL " ")
+if(NOT "/home/user/Desktop/csci4302_FinalProject/catkin_ws/devel/include " STREQUAL " ")
   set(libuvc_camera_INCLUDE_DIRS "")
-  set(_include_dirs "/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/devel/include")
+  set(_include_dirs "/home/user/Desktop/csci4302_FinalProject/catkin_ws/devel/include")
   foreach(idir ${_include_dirs})
     if(IS_ABSOLUTE ${idir} AND IS_DIRECTORY ${idir})
       set(include ${idir})
@@ -103,7 +103,7 @@ if(NOT "/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/devel/include " STREQ
         message(FATAL_ERROR "Project 'libuvc_camera' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  Ask the maintainer 'Ken Tossell <ken@tossell.net>' to fix it.")
       endif()
     else()
-      message(FATAL_ERROR "Project 'libuvc_camera' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/src/libuvc_ros/libuvc_camera/${idir}'.  Ask the maintainer 'Ken Tossell <ken@tossell.net>' to fix it.")
+      message(FATAL_ERROR "Project 'libuvc_camera' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/user/Desktop/csci4302_FinalProject/catkin_ws/src/libuvc_ros/libuvc_camera/${idir}'.  Ask the maintainer 'Ken Tossell <ken@tossell.net>' to fix it.")
     endif()
     _list_append_unique(libuvc_camera_INCLUDE_DIRS ${include})
   endforeach()
@@ -122,7 +122,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/cody/Dropbox/csci4302_FinalProject/catkin_ws/devel/lib;/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/devel/lib;/home/cody/Dropbox/advanced_robotics/coco3090/Homework3/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/user/Desktop/csci4302_FinalProject/catkin_ws/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

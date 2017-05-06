@@ -5,38 +5,52 @@
 
 "use strict";
 
-let _serializer = require('../base_serialize.js');
-let _deserializer = require('../base_deserialize.js');
-let _finder = require('../find.js');
+const _serializer = _ros_msg_utils.Serialize;
+const _arraySerializer = _serializer.Array;
+const _deserializer = _ros_msg_utils.Deserialize;
+const _arrayDeserializer = _deserializer.Array;
+const _finder = _ros_msg_utils.Find;
+const _getByteLength = _ros_msg_utils.getByteLength;
 let trajectory_msgs = _finder('trajectory_msgs');
 
 //-----------------------------------------------------------
 
 class pololu_trajectoryGoal {
-  constructor() {
-    this.joint_trajectory = new trajectory_msgs.msg.JointTrajectory();
+  constructor(initObj={}) {
+    if (initObj === null) {
+      // initObj === null is a special case for deserialization where we don't initialize fields
+      this.joint_trajectory = null;
+    }
+    else {
+      if (initObj.hasOwnProperty('joint_trajectory')) {
+        this.joint_trajectory = initObj.joint_trajectory
+      }
+      else {
+        this.joint_trajectory = new trajectory_msgs.msg.JointTrajectory();
+      }
+    }
   }
 
-  static serialize(obj, bufferInfo) {
+  static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type pololu_trajectoryGoal
     // Serialize message field [joint_trajectory]
-    bufferInfo = trajectory_msgs.msg.JointTrajectory.serialize(obj.joint_trajectory, bufferInfo);
-    return bufferInfo;
+    bufferOffset = trajectory_msgs.msg.JointTrajectory.serialize(obj.joint_trajectory, buffer, bufferOffset);
+    return bufferOffset;
   }
 
-  static deserialize(buffer) {
+  static deserialize(buffer, bufferOffset=[0]) {
     //deserializes a message object of type pololu_trajectoryGoal
-    let tmp;
     let len;
-    let data = new pololu_trajectoryGoal();
+    let data = new pololu_trajectoryGoal(null);
     // Deserialize message field [joint_trajectory]
-    tmp = trajectory_msgs.msg.JointTrajectory.deserialize(buffer);
-    data.joint_trajectory = tmp.data;
-    buffer = tmp.buffer;
-    return {
-      data: data,
-      buffer: buffer
-    }
+    data.joint_trajectory = trajectory_msgs.msg.JointTrajectory.deserialize(buffer, bufferOffset);
+    return data;
+  }
+
+  static getMessageSize(object) {
+    let length = 0;
+    length += trajectory_msgs.msg.JointTrajectory.getMessageSize(object.joint_trajectory);
+    return length;
   }
 
   static datatype() {
@@ -94,6 +108,21 @@ class pololu_trajectoryGoal {
     `;
   }
 
+  static Resolve(msg) {
+    // deep-construct a valid message object instance of whatever was passed in
+    if (typeof msg !== 'object' || msg === null) {
+      msg = {};
+    }
+    const resolved = new pololu_trajectoryGoal(null);
+    if (msg.joint_trajectory !== undefined) {
+      resolved.joint_trajectory = trajectory_msgs.msg.JointTrajectory.Resolve(msg.joint_trajectory)
+    }
+    else {
+      resolved.joint_trajectory = new trajectory_msgs.msg.JointTrajectory()
+    }
+
+    return resolved;
+    }
 };
 
 module.exports = pololu_trajectoryGoal;

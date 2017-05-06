@@ -5,9 +5,12 @@
 
 "use strict";
 
-let _serializer = require('../base_serialize.js');
-let _deserializer = require('../base_deserialize.js');
-let _finder = require('../find.js');
+const _serializer = _ros_msg_utils.Serialize;
+const _arraySerializer = _serializer.Array;
+const _deserializer = _ros_msg_utils.Deserialize;
+const _arrayDeserializer = _deserializer.Array;
+const _finder = _ros_msg_utils.Find;
+const _getByteLength = _ros_msg_utils.getByteLength;
 let pololu_trajectoryGoal = require('./pololu_trajectoryGoal.js');
 let actionlib_msgs = _finder('actionlib_msgs');
 let std_msgs = _finder('std_msgs');
@@ -15,44 +18,65 @@ let std_msgs = _finder('std_msgs');
 //-----------------------------------------------------------
 
 class pololu_trajectoryActionGoal {
-  constructor() {
-    this.header = new std_msgs.msg.Header();
-    this.goal_id = new actionlib_msgs.msg.GoalID();
-    this.goal = new pololu_trajectoryGoal();
+  constructor(initObj={}) {
+    if (initObj === null) {
+      // initObj === null is a special case for deserialization where we don't initialize fields
+      this.header = null;
+      this.goal_id = null;
+      this.goal = null;
+    }
+    else {
+      if (initObj.hasOwnProperty('header')) {
+        this.header = initObj.header
+      }
+      else {
+        this.header = new std_msgs.msg.Header();
+      }
+      if (initObj.hasOwnProperty('goal_id')) {
+        this.goal_id = initObj.goal_id
+      }
+      else {
+        this.goal_id = new actionlib_msgs.msg.GoalID();
+      }
+      if (initObj.hasOwnProperty('goal')) {
+        this.goal = initObj.goal
+      }
+      else {
+        this.goal = new pololu_trajectoryGoal();
+      }
+    }
   }
 
-  static serialize(obj, bufferInfo) {
+  static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type pololu_trajectoryActionGoal
     // Serialize message field [header]
-    bufferInfo = std_msgs.msg.Header.serialize(obj.header, bufferInfo);
+    bufferOffset = std_msgs.msg.Header.serialize(obj.header, buffer, bufferOffset);
     // Serialize message field [goal_id]
-    bufferInfo = actionlib_msgs.msg.GoalID.serialize(obj.goal_id, bufferInfo);
+    bufferOffset = actionlib_msgs.msg.GoalID.serialize(obj.goal_id, buffer, bufferOffset);
     // Serialize message field [goal]
-    bufferInfo = pololu_trajectoryGoal.serialize(obj.goal, bufferInfo);
-    return bufferInfo;
+    bufferOffset = pololu_trajectoryGoal.serialize(obj.goal, buffer, bufferOffset);
+    return bufferOffset;
   }
 
-  static deserialize(buffer) {
+  static deserialize(buffer, bufferOffset=[0]) {
     //deserializes a message object of type pololu_trajectoryActionGoal
-    let tmp;
     let len;
-    let data = new pololu_trajectoryActionGoal();
+    let data = new pololu_trajectoryActionGoal(null);
     // Deserialize message field [header]
-    tmp = std_msgs.msg.Header.deserialize(buffer);
-    data.header = tmp.data;
-    buffer = tmp.buffer;
+    data.header = std_msgs.msg.Header.deserialize(buffer, bufferOffset);
     // Deserialize message field [goal_id]
-    tmp = actionlib_msgs.msg.GoalID.deserialize(buffer);
-    data.goal_id = tmp.data;
-    buffer = tmp.buffer;
+    data.goal_id = actionlib_msgs.msg.GoalID.deserialize(buffer, bufferOffset);
     // Deserialize message field [goal]
-    tmp = pololu_trajectoryGoal.deserialize(buffer);
-    data.goal = tmp.data;
-    buffer = tmp.buffer;
-    return {
-      data: data,
-      buffer: buffer
-    }
+    data.goal = pololu_trajectoryGoal.deserialize(buffer, bufferOffset);
+    return data;
+  }
+
+  static getMessageSize(object) {
+    let length = 0;
+    length += std_msgs.msg.Header.getMessageSize(object.header);
+    length += actionlib_msgs.msg.GoalID.getMessageSize(object.goal_id);
+    length += pololu_trajectoryGoal.getMessageSize(object.goal);
+    return length;
   }
 
   static datatype() {
@@ -131,6 +155,35 @@ class pololu_trajectoryActionGoal {
     `;
   }
 
+  static Resolve(msg) {
+    // deep-construct a valid message object instance of whatever was passed in
+    if (typeof msg !== 'object' || msg === null) {
+      msg = {};
+    }
+    const resolved = new pololu_trajectoryActionGoal(null);
+    if (msg.header !== undefined) {
+      resolved.header = std_msgs.msg.Header.Resolve(msg.header)
+    }
+    else {
+      resolved.header = new std_msgs.msg.Header()
+    }
+
+    if (msg.goal_id !== undefined) {
+      resolved.goal_id = actionlib_msgs.msg.GoalID.Resolve(msg.goal_id)
+    }
+    else {
+      resolved.goal_id = new actionlib_msgs.msg.GoalID()
+    }
+
+    if (msg.goal !== undefined) {
+      resolved.goal = pololu_trajectoryGoal.Resolve(msg.goal)
+    }
+    else {
+      resolved.goal = new pololu_trajectoryGoal()
+    }
+
+    return resolved;
+    }
 };
 
 module.exports = pololu_trajectoryActionGoal;
