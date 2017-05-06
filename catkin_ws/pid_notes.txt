@@ -1,0 +1,6 @@
+Trail 1: Speed .4
+Kp = .5
+Kd = .25
+Notes: Semi good still overcorrected at end
+
+Trail 2: Speed 
