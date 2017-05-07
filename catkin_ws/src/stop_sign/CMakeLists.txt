@@ -8,8 +8,11 @@ project(stop_sign)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  cv_bridge
+  opencv2
   roscpp
   rospy
+  sendor_msgs
   std_msgs
 )
 
@@ -70,7 +73,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## Generate added messages and services with any dependencies listed here
 # generate_messages(
 #   DEPENDENCIES
-#   std_msgs
+#   sendor_msgs#   std_msgs
 # )
 
 ################################################
@@ -105,7 +108,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES stop_sign
-#  CATKIN_DEPENDS roscpp rospy std_msgs
+#  CATKIN_DEPENDS cv_bridge opencv2 roscpp rospy sendor_msgs std_msgs
 #  DEPENDS system_lib
 )
 
