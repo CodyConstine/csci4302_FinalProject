@@ -1,0 +1,41 @@
+<launch>
+    <node name="IMU_reader" pkg="wall_avoid" type="IMU_reader.py" output="screen" >
+    </node>
+    <node name="IR_reader" pkg="wall_avoid" type="IR_reader.py" output="screen" >
+    </node>
+    <node name="Motor_Controller" pkg="wall_avoid" type="Motor_Controller.py" output="screen" >
+    </node>
+      <node name="turning_PID" pkg="pid" type="controller" >
+         <param name="node_name" value="turning_PID" />
+         <param name="topic_from_controller" value="/turning_PID/control_effort" />
+         <param name="topic_from_plant" value="/turning_PID/state" />
+         <param name="setpoint_topic" value="/turning_PID/setpoint" />
+         <param name="Kp" value="1.0" />
+         <param name="Ki" value="0.1" />
+         <param name="Kd" value="0.5" />
+         <param name="rate" value="20" />
+         <param name="upper_limit" value="100" />
+         <param name="lower_limit" value="-100" />
+         <param name="windup_limit" value=".001" />
+         <param name="diagnostic_period" value="0.25" />
+         <param name="max_loop_frequency" value="100.0" />
+         <param name="min_loop_frequency" value="100.0" />
+
+       </node>
+       <node name="driving_PID" pkg="pid" type="controller" >
+          <param name="node_name" value="driving_PID" />
+          <param name="topic_from_controller" value="/driving_PID/control_effort" />
+          <param name="topic_from_plant" value="/driving_PID/state" />
+          <param name="setpoint_topic" value="/driving_PID/setpoint" />
+          <param name="Kp" value="1.0" />
+          <param name="Ki" value="0.0" />
+          <param name="Kd" value="0.5" />
+          <param name="rate" value="20" />
+          <param name="upper_limit" value="50" />
+          <param name="lower_limit" value="20" />
+          <param name="windup_limit" value=".001" />
+          <param name="diagnostic_period" value="0.25" />
+          <param name="max_loop_frequency" value="100.0" />
+          <param name="min_loop_frequency" value="100.0" />
+        </node>
+</launch>

@@ -7,6 +7,7 @@ from ros_pololu_servo.srv import MotorRange
 from ros_pololu_servo.msg import MotorCommand
 from ros_pololu_servo.msg import MotorState
 from ros_pololu_servo.msg import MotorStateList
+from sensor_msgs.msg import Imu
 
 #TODO create a v to x function
 
@@ -45,6 +46,8 @@ class wall_avoid():
         self.sub_turning_control = rospy.Subscriber('/turning_PID/control_effort', Float64, self.subCallback_Turning_Control, queue_size=1)
         #Subscriber for the PID control msgs
         self.sub_driving_control = rospy.Subscriber('/driving_PID/control_effort', Float64, self.subCallback_Driving_Control, queue_size=1)
+
+        self.sub_imu = rospy.Subscriber('/imu/data_raw', Imu, self.imuCallBack, queue_size=1)
         #this block is to send the desired setpoint
         self.setpoint_turning = 130
         self.setpoint_driving = 120
@@ -54,6 +57,10 @@ class wall_avoid():
         self.ratio_Max = 1
         self.last = rospy.get_rostime().nsecs
         self.stop = False
+
+        self.input = []
+        self.output = []
+        self.ALPHA = 0.15
     #callback for the control_effort, will turn the control_effort data on -100 to 100 and scale our maximum radians of .6
     def subCallback_Turning_Control(self, msg):
         turn_ratio = self.ratio_Max*(msg.data/100.0)*(1.0+(self.front_previous-15.0)/-35.0)
@@ -98,6 +105,22 @@ class wall_avoid():
                 self.state_driving = x.pulse
                 self.setpoint_driving_pub.publish(self.setpoint_driving)
                 self.state_driving_pub.publish(self.state_driving)
+    def imuCallBack(self,msg):
+        out = self.lowPassFilter(msg.linear_acceleration.y)
+        print(out)
+
+    def lowPassFilter(self,data):
+        n = len(self.input)
+        self.input.append(data)
+        if(len(self.output)== 0):
+            self.output.append(self.input[0])
+            return input[n-1]
+        l = 0
+        if(n>10):
+            l = n-10
+        for i in range(l,n):
+            self.output.append(self.output[i-1] + self.ALPHA * (self.input[i]*self.output[i-1]))
+        return self.output[n-1]
 
 if __name__ == "__main__":
     rospy.init_node('wall_avoid')
