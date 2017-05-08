@@ -9,10 +9,9 @@ project(stop_sign)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   cv_bridge
-  opencv2
   roscpp
   rospy
-  sendor_msgs
+  sensor_msgs
   std_msgs
 )
 
