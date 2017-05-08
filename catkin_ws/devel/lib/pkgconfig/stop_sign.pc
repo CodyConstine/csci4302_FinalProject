@@ -1,8 +1,0 @@
-prefix=/home/user/Desktop/csci4302_FinalProject/catkin_ws/devel
-
-Name: stop_sign
-Description: Description of stop_sign
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/user/Desktop/csci4302_FinalProject/catkin_ws/devel/lib 
-Requires: 
