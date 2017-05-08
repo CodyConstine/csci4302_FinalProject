@@ -1,8 +1,0 @@
-prefix=/home/user/Desktop/csci4302_FinalProject/catkin_ws/devel
-
-Name: libphidget21
-Description: Description of libphidget21
-Version: 0.7.0
-Cflags: -I/home/user/Desktop/csci4302_FinalProject/catkin_ws/src/phidgets_drivers/libphidget21/include
-Libs: -L/home/user/Desktop/csci4302_FinalProject/catkin_ws/devel/lib -lphidget21
-Requires: 

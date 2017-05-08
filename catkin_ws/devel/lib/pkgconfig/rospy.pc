@@ -1,8 +1,0 @@
-prefix=/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/devel
-
-Name: rospy
-Description: Description of rospy
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/cody/Dropbox/csci4302_FinalProject/catkin_ws/devel/lib 
-Requires: 
