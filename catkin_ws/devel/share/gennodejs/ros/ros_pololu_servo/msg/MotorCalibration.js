@@ -5,72 +5,104 @@
 
 "use strict";
 
-let _serializer = require('../base_serialize.js');
-let _deserializer = require('../base_deserialize.js');
-let _finder = require('../find.js');
+const _serializer = _ros_msg_utils.Serialize;
+const _arraySerializer = _serializer.Array;
+const _deserializer = _ros_msg_utils.Deserialize;
+const _arrayDeserializer = _deserializer.Array;
+const _finder = _ros_msg_utils.Find;
+const _getByteLength = _ros_msg_utils.getByteLength;
 
 //-----------------------------------------------------------
 
 class MotorCalibration {
-  constructor() {
-    this.min_pulse = 0;
-    this.min_radians = 0.0;
-    this.min_degrees = 0.0;
-    this.max_pulse = 0;
-    this.max_radians = 0.0;
-    this.max_degrees = 0.0;
+  constructor(initObj={}) {
+    if (initObj === null) {
+      // initObj === null is a special case for deserialization where we don't initialize fields
+      this.min_pulse = null;
+      this.min_radians = null;
+      this.min_degrees = null;
+      this.max_pulse = null;
+      this.max_radians = null;
+      this.max_degrees = null;
+    }
+    else {
+      if (initObj.hasOwnProperty('min_pulse')) {
+        this.min_pulse = initObj.min_pulse
+      }
+      else {
+        this.min_pulse = 0;
+      }
+      if (initObj.hasOwnProperty('min_radians')) {
+        this.min_radians = initObj.min_radians
+      }
+      else {
+        this.min_radians = 0.0;
+      }
+      if (initObj.hasOwnProperty('min_degrees')) {
+        this.min_degrees = initObj.min_degrees
+      }
+      else {
+        this.min_degrees = 0.0;
+      }
+      if (initObj.hasOwnProperty('max_pulse')) {
+        this.max_pulse = initObj.max_pulse
+      }
+      else {
+        this.max_pulse = 0;
+      }
+      if (initObj.hasOwnProperty('max_radians')) {
+        this.max_radians = initObj.max_radians
+      }
+      else {
+        this.max_radians = 0.0;
+      }
+      if (initObj.hasOwnProperty('max_degrees')) {
+        this.max_degrees = initObj.max_degrees
+      }
+      else {
+        this.max_degrees = 0.0;
+      }
+    }
   }
 
-  static serialize(obj, bufferInfo) {
+  static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type MotorCalibration
     // Serialize message field [min_pulse]
-    bufferInfo = _serializer.int32(obj.min_pulse, bufferInfo);
+    bufferOffset = _serializer.int32(obj.min_pulse, buffer, bufferOffset);
     // Serialize message field [min_radians]
-    bufferInfo = _serializer.float64(obj.min_radians, bufferInfo);
+    bufferOffset = _serializer.float64(obj.min_radians, buffer, bufferOffset);
     // Serialize message field [min_degrees]
-    bufferInfo = _serializer.float64(obj.min_degrees, bufferInfo);
+    bufferOffset = _serializer.float64(obj.min_degrees, buffer, bufferOffset);
     // Serialize message field [max_pulse]
-    bufferInfo = _serializer.int32(obj.max_pulse, bufferInfo);
+    bufferOffset = _serializer.int32(obj.max_pulse, buffer, bufferOffset);
     // Serialize message field [max_radians]
-    bufferInfo = _serializer.float64(obj.max_radians, bufferInfo);
+    bufferOffset = _serializer.float64(obj.max_radians, buffer, bufferOffset);
     // Serialize message field [max_degrees]
-    bufferInfo = _serializer.float64(obj.max_degrees, bufferInfo);
-    return bufferInfo;
+    bufferOffset = _serializer.float64(obj.max_degrees, buffer, bufferOffset);
+    return bufferOffset;
   }
 
-  static deserialize(buffer) {
+  static deserialize(buffer, bufferOffset=[0]) {
     //deserializes a message object of type MotorCalibration
-    let tmp;
     let len;
-    let data = new MotorCalibration();
+    let data = new MotorCalibration(null);
     // Deserialize message field [min_pulse]
-    tmp = _deserializer.int32(buffer);
-    data.min_pulse = tmp.data;
-    buffer = tmp.buffer;
+    data.min_pulse = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [min_radians]
-    tmp = _deserializer.float64(buffer);
-    data.min_radians = tmp.data;
-    buffer = tmp.buffer;
+    data.min_radians = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [min_degrees]
-    tmp = _deserializer.float64(buffer);
-    data.min_degrees = tmp.data;
-    buffer = tmp.buffer;
+    data.min_degrees = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [max_pulse]
-    tmp = _deserializer.int32(buffer);
-    data.max_pulse = tmp.data;
-    buffer = tmp.buffer;
+    data.max_pulse = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [max_radians]
-    tmp = _deserializer.float64(buffer);
-    data.max_radians = tmp.data;
-    buffer = tmp.buffer;
+    data.max_radians = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [max_degrees]
-    tmp = _deserializer.float64(buffer);
-    data.max_degrees = tmp.data;
-    buffer = tmp.buffer;
-    return {
-      data: data,
-      buffer: buffer
-    }
+    data.max_degrees = _deserializer.float64(buffer, bufferOffset);
+    return data;
+  }
+
+  static getMessageSize(object) {
+    return 40;
   }
 
   static datatype() {
@@ -95,6 +127,56 @@ class MotorCalibration {
     `;
   }
 
+  static Resolve(msg) {
+    // deep-construct a valid message object instance of whatever was passed in
+    if (typeof msg !== 'object' || msg === null) {
+      msg = {};
+    }
+    const resolved = new MotorCalibration(null);
+    if (msg.min_pulse !== undefined) {
+      resolved.min_pulse = msg.min_pulse;
+    }
+    else {
+      resolved.min_pulse = 0
+    }
+
+    if (msg.min_radians !== undefined) {
+      resolved.min_radians = msg.min_radians;
+    }
+    else {
+      resolved.min_radians = 0.0
+    }
+
+    if (msg.min_degrees !== undefined) {
+      resolved.min_degrees = msg.min_degrees;
+    }
+    else {
+      resolved.min_degrees = 0.0
+    }
+
+    if (msg.max_pulse !== undefined) {
+      resolved.max_pulse = msg.max_pulse;
+    }
+    else {
+      resolved.max_pulse = 0
+    }
+
+    if (msg.max_radians !== undefined) {
+      resolved.max_radians = msg.max_radians;
+    }
+    else {
+      resolved.max_radians = 0.0
+    }
+
+    if (msg.max_degrees !== undefined) {
+      resolved.max_degrees = msg.max_degrees;
+    }
+    else {
+      resolved.max_degrees = 0.0
+    }
+
+    return resolved;
+    }
 };
 
 module.exports = MotorCalibration;

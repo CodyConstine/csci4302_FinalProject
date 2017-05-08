@@ -5,37 +5,49 @@
 
 "use strict";
 
-let _serializer = require('../base_serialize.js');
-let _deserializer = require('../base_deserialize.js');
-let _finder = require('../find.js');
+const _serializer = _ros_msg_utils.Serialize;
+const _arraySerializer = _serializer.Array;
+const _deserializer = _ros_msg_utils.Deserialize;
+const _arrayDeserializer = _deserializer.Array;
+const _finder = _ros_msg_utils.Find;
+const _getByteLength = _ros_msg_utils.getByteLength;
 
 //-----------------------------------------------------------
 
 class pololu_trajectoryFeedback {
-  constructor() {
-    this.percent_complete = 0.0;
+  constructor(initObj={}) {
+    if (initObj === null) {
+      // initObj === null is a special case for deserialization where we don't initialize fields
+      this.percent_complete = null;
+    }
+    else {
+      if (initObj.hasOwnProperty('percent_complete')) {
+        this.percent_complete = initObj.percent_complete
+      }
+      else {
+        this.percent_complete = 0.0;
+      }
+    }
   }
 
-  static serialize(obj, bufferInfo) {
+  static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type pololu_trajectoryFeedback
     // Serialize message field [percent_complete]
-    bufferInfo = _serializer.float32(obj.percent_complete, bufferInfo);
-    return bufferInfo;
+    bufferOffset = _serializer.float32(obj.percent_complete, buffer, bufferOffset);
+    return bufferOffset;
   }
 
-  static deserialize(buffer) {
+  static deserialize(buffer, bufferOffset=[0]) {
     //deserializes a message object of type pololu_trajectoryFeedback
-    let tmp;
     let len;
-    let data = new pololu_trajectoryFeedback();
+    let data = new pololu_trajectoryFeedback(null);
     // Deserialize message field [percent_complete]
-    tmp = _deserializer.float32(buffer);
-    data.percent_complete = tmp.data;
-    buffer = tmp.buffer;
-    return {
-      data: data,
-      buffer: buffer
-    }
+    data.percent_complete = _deserializer.float32(buffer, bufferOffset);
+    return data;
+  }
+
+  static getMessageSize(object) {
+    return 4;
   }
 
   static datatype() {
@@ -58,6 +70,21 @@ class pololu_trajectoryFeedback {
     `;
   }
 
+  static Resolve(msg) {
+    // deep-construct a valid message object instance of whatever was passed in
+    if (typeof msg !== 'object' || msg === null) {
+      msg = {};
+    }
+    const resolved = new pololu_trajectoryFeedback(null);
+    if (msg.percent_complete !== undefined) {
+      resolved.percent_complete = msg.percent_complete;
+    }
+    else {
+      resolved.percent_complete = 0.0
+    }
+
+    return resolved;
+    }
 };
 
 module.exports = pololu_trajectoryFeedback;

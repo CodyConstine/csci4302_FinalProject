@@ -5,9 +5,12 @@
 
 "use strict";
 
-let _serializer = require('../base_serialize.js');
-let _deserializer = require('../base_deserialize.js');
-let _finder = require('../find.js');
+const _serializer = _ros_msg_utils.Serialize;
+const _arraySerializer = _serializer.Array;
+const _deserializer = _ros_msg_utils.Deserialize;
+const _arrayDeserializer = _deserializer.Array;
+const _finder = _ros_msg_utils.Find;
+const _getByteLength = _ros_msg_utils.getByteLength;
 let pololu_trajectoryActionGoal = require('./pololu_trajectoryActionGoal.js');
 let pololu_trajectoryActionResult = require('./pololu_trajectoryActionResult.js');
 let pololu_trajectoryActionFeedback = require('./pololu_trajectoryActionFeedback.js');
@@ -15,44 +18,65 @@ let pololu_trajectoryActionFeedback = require('./pololu_trajectoryActionFeedback
 //-----------------------------------------------------------
 
 class pololu_trajectoryAction {
-  constructor() {
-    this.action_goal = new pololu_trajectoryActionGoal();
-    this.action_result = new pololu_trajectoryActionResult();
-    this.action_feedback = new pololu_trajectoryActionFeedback();
+  constructor(initObj={}) {
+    if (initObj === null) {
+      // initObj === null is a special case for deserialization where we don't initialize fields
+      this.action_goal = null;
+      this.action_result = null;
+      this.action_feedback = null;
+    }
+    else {
+      if (initObj.hasOwnProperty('action_goal')) {
+        this.action_goal = initObj.action_goal
+      }
+      else {
+        this.action_goal = new pololu_trajectoryActionGoal();
+      }
+      if (initObj.hasOwnProperty('action_result')) {
+        this.action_result = initObj.action_result
+      }
+      else {
+        this.action_result = new pololu_trajectoryActionResult();
+      }
+      if (initObj.hasOwnProperty('action_feedback')) {
+        this.action_feedback = initObj.action_feedback
+      }
+      else {
+        this.action_feedback = new pololu_trajectoryActionFeedback();
+      }
+    }
   }
 
-  static serialize(obj, bufferInfo) {
+  static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type pololu_trajectoryAction
     // Serialize message field [action_goal]
-    bufferInfo = pololu_trajectoryActionGoal.serialize(obj.action_goal, bufferInfo);
+    bufferOffset = pololu_trajectoryActionGoal.serialize(obj.action_goal, buffer, bufferOffset);
     // Serialize message field [action_result]
-    bufferInfo = pololu_trajectoryActionResult.serialize(obj.action_result, bufferInfo);
+    bufferOffset = pololu_trajectoryActionResult.serialize(obj.action_result, buffer, bufferOffset);
     // Serialize message field [action_feedback]
-    bufferInfo = pololu_trajectoryActionFeedback.serialize(obj.action_feedback, bufferInfo);
-    return bufferInfo;
+    bufferOffset = pololu_trajectoryActionFeedback.serialize(obj.action_feedback, buffer, bufferOffset);
+    return bufferOffset;
   }
 
-  static deserialize(buffer) {
+  static deserialize(buffer, bufferOffset=[0]) {
     //deserializes a message object of type pololu_trajectoryAction
-    let tmp;
     let len;
-    let data = new pololu_trajectoryAction();
+    let data = new pololu_trajectoryAction(null);
     // Deserialize message field [action_goal]
-    tmp = pololu_trajectoryActionGoal.deserialize(buffer);
-    data.action_goal = tmp.data;
-    buffer = tmp.buffer;
+    data.action_goal = pololu_trajectoryActionGoal.deserialize(buffer, bufferOffset);
     // Deserialize message field [action_result]
-    tmp = pololu_trajectoryActionResult.deserialize(buffer);
-    data.action_result = tmp.data;
-    buffer = tmp.buffer;
+    data.action_result = pololu_trajectoryActionResult.deserialize(buffer, bufferOffset);
     // Deserialize message field [action_feedback]
-    tmp = pololu_trajectoryActionFeedback.deserialize(buffer);
-    data.action_feedback = tmp.data;
-    buffer = tmp.buffer;
-    return {
-      data: data,
-      buffer: buffer
-    }
+    data.action_feedback = pololu_trajectoryActionFeedback.deserialize(buffer, bufferOffset);
+    return data;
+  }
+
+  static getMessageSize(object) {
+    let length = 0;
+    length += pololu_trajectoryActionGoal.getMessageSize(object.action_goal);
+    length += pololu_trajectoryActionResult.getMessageSize(object.action_result);
+    length += pololu_trajectoryActionFeedback.getMessageSize(object.action_feedback);
+    return length;
   }
 
   static datatype() {
@@ -193,6 +217,35 @@ class pololu_trajectoryAction {
     `;
   }
 
+  static Resolve(msg) {
+    // deep-construct a valid message object instance of whatever was passed in
+    if (typeof msg !== 'object' || msg === null) {
+      msg = {};
+    }
+    const resolved = new pololu_trajectoryAction(null);
+    if (msg.action_goal !== undefined) {
+      resolved.action_goal = pololu_trajectoryActionGoal.Resolve(msg.action_goal)
+    }
+    else {
+      resolved.action_goal = new pololu_trajectoryActionGoal()
+    }
+
+    if (msg.action_result !== undefined) {
+      resolved.action_result = pololu_trajectoryActionResult.Resolve(msg.action_result)
+    }
+    else {
+      resolved.action_result = new pololu_trajectoryActionResult()
+    }
+
+    if (msg.action_feedback !== undefined) {
+      resolved.action_feedback = pololu_trajectoryActionFeedback.Resolve(msg.action_feedback)
+    }
+    else {
+      resolved.action_feedback = new pololu_trajectoryActionFeedback()
+    }
+
+    return resolved;
+    }
 };
 
 module.exports = pololu_trajectoryAction;
