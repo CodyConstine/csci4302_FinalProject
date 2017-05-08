@@ -5,58 +5,84 @@
 
 "use strict";
 
-let _serializer = require('../base_serialize.js');
-let _deserializer = require('../base_deserialize.js');
-let _finder = require('../find.js');
+const _serializer = _ros_msg_utils.Serialize;
+const _arraySerializer = _serializer.Array;
+const _deserializer = _ros_msg_utils.Deserialize;
+const _arrayDeserializer = _deserializer.Array;
+const _finder = _ros_msg_utils.Find;
+const _getByteLength = _ros_msg_utils.getByteLength;
 
 //-----------------------------------------------------------
 
 class MotorCommand {
-  constructor() {
-    this.joint_name = '';
-    this.position = 0.0;
-    this.speed = 0.0;
-    this.acceleration = 0.0;
+  constructor(initObj={}) {
+    if (initObj === null) {
+      // initObj === null is a special case for deserialization where we don't initialize fields
+      this.joint_name = null;
+      this.position = null;
+      this.speed = null;
+      this.acceleration = null;
+    }
+    else {
+      if (initObj.hasOwnProperty('joint_name')) {
+        this.joint_name = initObj.joint_name
+      }
+      else {
+        this.joint_name = '';
+      }
+      if (initObj.hasOwnProperty('position')) {
+        this.position = initObj.position
+      }
+      else {
+        this.position = 0.0;
+      }
+      if (initObj.hasOwnProperty('speed')) {
+        this.speed = initObj.speed
+      }
+      else {
+        this.speed = 0.0;
+      }
+      if (initObj.hasOwnProperty('acceleration')) {
+        this.acceleration = initObj.acceleration
+      }
+      else {
+        this.acceleration = 0.0;
+      }
+    }
   }
 
-  static serialize(obj, bufferInfo) {
+  static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type MotorCommand
     // Serialize message field [joint_name]
-    bufferInfo = _serializer.string(obj.joint_name, bufferInfo);
+    bufferOffset = _serializer.string(obj.joint_name, buffer, bufferOffset);
     // Serialize message field [position]
-    bufferInfo = _serializer.float64(obj.position, bufferInfo);
+    bufferOffset = _serializer.float64(obj.position, buffer, bufferOffset);
     // Serialize message field [speed]
-    bufferInfo = _serializer.float32(obj.speed, bufferInfo);
+    bufferOffset = _serializer.float32(obj.speed, buffer, bufferOffset);
     // Serialize message field [acceleration]
-    bufferInfo = _serializer.float32(obj.acceleration, bufferInfo);
-    return bufferInfo;
+    bufferOffset = _serializer.float32(obj.acceleration, buffer, bufferOffset);
+    return bufferOffset;
   }
 
-  static deserialize(buffer) {
+  static deserialize(buffer, bufferOffset=[0]) {
     //deserializes a message object of type MotorCommand
-    let tmp;
     let len;
-    let data = new MotorCommand();
+    let data = new MotorCommand(null);
     // Deserialize message field [joint_name]
-    tmp = _deserializer.string(buffer);
-    data.joint_name = tmp.data;
-    buffer = tmp.buffer;
+    data.joint_name = _deserializer.string(buffer, bufferOffset);
     // Deserialize message field [position]
-    tmp = _deserializer.float64(buffer);
-    data.position = tmp.data;
-    buffer = tmp.buffer;
+    data.position = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [speed]
-    tmp = _deserializer.float32(buffer);
-    data.speed = tmp.data;
-    buffer = tmp.buffer;
+    data.speed = _deserializer.float32(buffer, bufferOffset);
     // Deserialize message field [acceleration]
-    tmp = _deserializer.float32(buffer);
-    data.acceleration = tmp.data;
-    buffer = tmp.buffer;
-    return {
-      data: data,
-      buffer: buffer
-    }
+    data.acceleration = _deserializer.float32(buffer, bufferOffset);
+    return data;
+  }
+
+  static getMessageSize(object) {
+    let length = 0;
+    length += object.joint_name.length;
+    return length + 20;
   }
 
   static datatype() {
@@ -80,6 +106,42 @@ class MotorCommand {
     `;
   }
 
+  static Resolve(msg) {
+    // deep-construct a valid message object instance of whatever was passed in
+    if (typeof msg !== 'object' || msg === null) {
+      msg = {};
+    }
+    const resolved = new MotorCommand(null);
+    if (msg.joint_name !== undefined) {
+      resolved.joint_name = msg.joint_name;
+    }
+    else {
+      resolved.joint_name = ''
+    }
+
+    if (msg.position !== undefined) {
+      resolved.position = msg.position;
+    }
+    else {
+      resolved.position = 0.0
+    }
+
+    if (msg.speed !== undefined) {
+      resolved.speed = msg.speed;
+    }
+    else {
+      resolved.speed = 0.0
+    }
+
+    if (msg.acceleration !== undefined) {
+      resolved.acceleration = msg.acceleration;
+    }
+    else {
+      resolved.acceleration = 0.0
+    }
+
+    return resolved;
+    }
 };
 
 module.exports = MotorCommand;
