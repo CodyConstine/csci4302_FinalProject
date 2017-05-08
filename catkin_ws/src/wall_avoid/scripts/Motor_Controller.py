@@ -24,8 +24,9 @@ class Motor_Controller():
         self.motor_driving_pub = rospy.Publisher('pololu/command', MotorCommand, queue_size=1)
         self.cmd_driving = MotorCommand()
         self.cmd_driving.joint_name = 'back_motor'
-        self.cmd_driving.speed = 1
-        self.cmd_driving.acceleration = 1
+        self.cmd_driving.speed = 0
+        self.cmd_driving.acceleration = 0
+
 
         #Subscriber for the PID control msgs
         self.sub_turning_control = rospy.Subscriber('/turning_PID/control_effort', Float64, self.subCallback_Turning_Control, queue_size=1)
@@ -64,7 +65,8 @@ class Motor_Controller():
         # print(msg.data)
         throttle = 0
         if(msg.data == 1):
-            throttle = .175
+            throttle = .1
+        print throttle
         # now = rospy.get_rostime().nsecs + rospy.get_rostime().secs*10e9
         # # print(str(self.last+5e8)+":"+str(now));
         # if(self.last+self.timeVar<now):
@@ -79,7 +81,6 @@ class Motor_Controller():
         # if(self.stop):
         #     throttle = 0
         self.cmd_driving.position = throttle
-
         self.motor_driving_pub.publish(self.cmd_driving)
 
 if __name__ == "__main__":
