@@ -64,7 +64,7 @@ class IMU_reader():
         out = (nowTime-self.lastTime)*(.5*(a+b))
         out = out/1e9
         pub = 0
-        print out
+        # print out
         if(out < 30):
             pub =1
         self.state_driving = pub
