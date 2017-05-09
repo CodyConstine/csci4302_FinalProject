@@ -1,0 +1,8 @@
+prefix=/home/odroid/Documents/csci4302_FinalProject/catkin_ws/devel
+
+Name: phidgets_imu
+Description: Description of phidgets_imu
+Version: 0.7.0
+Cflags: -I/home/odroid/Documents/csci4302_FinalProject/catkin_ws/src/phidgets_drivers/phidgets_imu/include -I/usr/include
+Libs: -L/home/odroid/Documents/csci4302_FinalProject/catkin_ws/devel/lib -lphidgets_imu -l:/usr/lib/arm-linux-gnueabihf/libboost_thread.so -l:/usr/lib/arm-linux-gnueabihf/libboost_chrono.so -l:/usr/lib/arm-linux-gnueabihf/libboost_system.so -l:/usr/lib/arm-linux-gnueabihf/libboost_date_time.so -l:/usr/lib/arm-linux-gnueabihf/libboost_atomic.so -l:/usr/lib/arm-linux-gnueabihf/libpthread.so
+Requires: diagnostic_msgs diagnostic_updater nodelet pluginlib phidgets_api roscpp sensor_msgs std_msgs std_srvs tf

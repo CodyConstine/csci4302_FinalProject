@@ -1,5 +1,5 @@
 <launch>
-    <node name="IMU_reader" pkg="wall_avoid" type="IMU_reader.py" output="screen" >
+    <node name="kalman" pkg="wall_avoid" type="kalman.py" output="screen" >
     </node>
     <node name="IR_reader" pkg="wall_avoid" type="IR_reader.py" output="screen" >
     </node>

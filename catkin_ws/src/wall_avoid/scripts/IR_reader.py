@@ -34,8 +34,10 @@ class IR_reader():
         self.setpoint_driving = 120
     #callback for the pololu motor states, will take the side ir pulse and feed it to the pid controller
     def subCallback_Turning(self, msg):
+#	print "Here"
         for x in msg.motor_states:
             if x.motor_id == 6:
+#		print x.pulse
                 self.state_turning = x.pulse
                 self.setpoint_turning_pub.publish(self.setpoint_turning)
                 self.state_turning_pub.publish(self.state_turning)

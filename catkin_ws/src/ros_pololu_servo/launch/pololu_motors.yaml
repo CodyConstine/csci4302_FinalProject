@@ -3,7 +3,7 @@
 back_motor:
   pololu_id: 12
   motor_id: 0
-  init: 1500
+  init: 1504
   min: 1000
   max: 2000
   reverse: false

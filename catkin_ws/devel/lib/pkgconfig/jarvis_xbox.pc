@@ -1,0 +1,8 @@
+prefix=/home/odroid/Documents/csci4302_FinalProject/catkin_ws/devel
+
+Name: jarvis_xbox
+Description: Description of jarvis_xbox
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/odroid/Documents/csci4302_FinalProject/catkin_ws/devel/lib 
+Requires: 

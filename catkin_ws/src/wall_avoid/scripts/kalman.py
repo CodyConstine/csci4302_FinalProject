@@ -86,14 +86,14 @@ class IMU_reader():
         self.rk.update(np.array([x,y]))
         self.xs.append(self.rk.x)
         # print len(self.xs)
-        print self.xs[k][1]
+#        print self.xs[k][1]
         self.state_filter = self.xs[k][1]
         self.state_filter_pub.publish(self.state_filter)
         pub = 0
         if(self.xs[k][1]<10):
             pub = 1
         self.state_driving = pub
-        self.state_driving_pub.publish(self.state_driving)
+#        self.state_driving_pub.publish(self.state_driving)
         # rk.predict()
 
 

@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/odroid/Documents/csci4302_FinalProject/catkin_ws/devel/setup.sh
