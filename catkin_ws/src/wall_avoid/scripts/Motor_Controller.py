@@ -59,6 +59,12 @@ class Motor_Controller():
         self.motor_driving_pub.publish(self.cmd_driving)
     def subFront_PID(self,msg):
         self.front_previous = msg.data
+	print self.cmd_driving
+	self.cmd_driving.position = .15
+	if(msg.data!=0):
+		self.cmd_driving.position = .3 *(msg.data/100)
+#        self.motor_driving_pub.publish(self.cmd_driving)
+
     #callback for the control_effort, will turn the control_effort data on -100 to 100 and scale our maximum radians of .6
     def subCallback_Driving_Control(self, msg):
         # throttle = 1*(msg.data/100)
@@ -66,7 +72,7 @@ class Motor_Controller():
         #     throttle= -.5
         # throttle = .175
         # print(msg.data)
-        throttle = .2
+        throttle = 0
         if(msg.data == 1):
             throttle = .2
         print throttle
@@ -84,7 +90,7 @@ class Motor_Controller():
         # if(self.stop):
         #     throttle = 0
         self.cmd_driving.position = throttle
-        self.motor_driving_pub.publish(self.cmd_driving)
+#        self.motor_driving_pub.publish(self.cmd_driving)
 	def __exit__(self, exc_type, exc_value, traceback):
         	self.cmd_driving.position = 0
 	        self.motor_driving_pub.publish(self.cmd_driving)
