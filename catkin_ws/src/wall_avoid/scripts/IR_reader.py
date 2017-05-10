@@ -52,7 +52,7 @@ class IR_reader():
 #                self.setpoint_driving_pub.publish(self.setpoint_driving)
 #                self.state_driving_pub.publish(self.state_driving)
 #	print str(a-b)
-    self.setpoint_turning_pub.publish(self.setpoint_turning)
+#        self.setpoint_turning_pub.publish(self.setpoint_turning)
 	self.state_turning_pub.publish(a-b)
 if __name__ == "__main__":
     rospy.init_node('IR_reader')

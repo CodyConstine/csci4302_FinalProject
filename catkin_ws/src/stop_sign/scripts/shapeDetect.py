@@ -21,17 +21,20 @@ class stop_sign_node:
 		self.numDetected = 0
 		self.stopped = False
 		self.counter = 0
-
+		self.loopc = 0
 	def callback(self,data):
+		if(self.loopc == 20):
+			self.loopc = 0
+			self.numDetected = 0
 		try:
 			# mono8: CV_8UC1 grayscale image
 			cv_image = self.bridge.imgmsg_to_cv2(data, "mono8")
 		except CvBridgeError as e:
 			print(e)
 
-		cv_image_blur = cv2.GaussianBlur(cv_image, (5,5), 0)
+		cv_image_blur = cv2.GaussianBlur(cv_image, (1,1), 0)
 		#thresh = cv2.threshold(cv_image,127,255,0)[1]
-		thresh = cv2.threshold(cv_image_blur,100,255,0)[1]
+		thresh = cv2.threshold(cv_image_blur,110,255,0)[1]
 		contours = cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)[0]
 		
 		for cnt in contours:
@@ -41,21 +44,21 @@ class stop_sign_node:
 			approx = cv2.approxPolyDP(cnt,epsilon,True)
 			x,y,w,h = cv2.boundingRect(cnt)
 
-			if len(approx) >= 8 and (w >= 55 and h >= 65) and (area >= 3000 and area <= 170000):
+			if len(approx) >= 8 and (w >= 55 and h >= 65) and (area >= 6000 and area <= 100000):
 			#if len(approx) >= 8 and (area >= 3000 and area <= 170000):
 				#print(area)
 				cv2.rectangle(cv_image_blur,(x,y),(x+w,y+h),(0,255,0),2)
 				cv2.drawContours(cv_image_blur,[cnt],0,(255,0,0),3)
 				self.numDetected += 1
 
-			if self.numDetected > 15:
+			if self.numDetected > 25:
 				self.numDetected = 0
 				self.stopped = False
-
-		cv2.imshow("Image window", cv_image_blur)
+		self.loopc += 1
+		#cv2.imshow("Image window", cv_image_blur)
 		cv2.waitKey(1)
 
-		if self.numDetected >= 5 and not self.stopped:
+		if self.numDetected >= 10 and not self.stopped:
 			self.stopped = True
 			print(self.stopped)
 			try:
@@ -70,7 +73,7 @@ class stop_sign_node:
 
 		#print(self.stopped)
 
-		if(self.counter >= 20):
+		if(self.counter >= 25):
 			self.stopped = False
 			self.counter = 0
 			self.numDetected = 0
