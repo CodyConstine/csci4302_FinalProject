@@ -99,20 +99,20 @@ class Motor_Controller():
         self.motor_driving_pub.publish(self.cmd_driving)
     def __exit__(self, exc_type, exc_value, traceback):
         self.cmd_driving.position = 0
-	self.motor_driving_pub.publish(self.cmd_driving)
+	    self.motor_driving_pub.publish(self.cmd_driving)
 
     #make the bot stop after confirming seeing a stop sign
     def subCallback_Stop_Sign(self, msg):
-	if(self.stop):
-		return
-	print type(msg.data)
-	self.stop = True
-#	if(msg.data):
-	throttle = 0
-	self.cmd_driving.position = 0
+    	if(self.stop):
+    		return
+    	print type(msg.data)
+    	self.stop = True
+    #	if(msg.data):
+    	throttle = 0
+    	self.cmd_driving.position = 0
         self.motor_driving_pub.publish(self.cmd_driving)
-	rospy.sleep(10)
-	self.cmd_driving.position = .15
+    	rospy.sleep(10)
+    	self.cmd_driving.position = .15
 
 if __name__ == "__main__":
     rospy.init_node('Motor_Controller')

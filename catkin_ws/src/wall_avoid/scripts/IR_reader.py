@@ -30,7 +30,7 @@ class IR_reader():
         #Subscriber for the state of the pololu motors
         self.sub_pololu = rospy.Subscriber('/pololu/motor_states', MotorStateList, self.subCallback_Turning, queue_size=1)
         #this block is to send the desired setpoint
-        self.setpoint_turning = 130
+        self.setpoint_turning = 0
         self.setpoint_driving = 120
     #callback for the pololu motor states, will take the side ir pulse and feed it to the pid controller
     def subCallback_Turning(self, msg):
@@ -52,6 +52,7 @@ class IR_reader():
 #                self.setpoint_driving_pub.publish(self.setpoint_driving)
 #                self.state_driving_pub.publish(self.state_driving)
 #	print str(a-b)
+    self.setpoint_turning_pub.publish(self.setpoint_turning)
 	self.state_turning_pub.publish(a-b)
 if __name__ == "__main__":
     rospy.init_node('IR_reader')
