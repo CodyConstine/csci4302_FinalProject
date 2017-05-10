@@ -35,16 +35,24 @@ class IR_reader():
     #callback for the pololu motor states, will take the side ir pulse and feed it to the pid controller
     def subCallback_Turning(self, msg):
 #	print "Here"
+	a = 0
+	b = 0
         for x in msg.motor_states:
+	    #a = 0
+	    #b = 0
             if x.motor_id == 6:
 #		print x.pulse
-                self.state_turning = x.pulse
-                self.setpoint_turning_pub.publish(self.setpoint_turning)
-                self.state_turning_pub.publish(self.state_turning)
+		a = x.pulse
+#                self.state_turning = x.pulse
+#                self.setpoint_turning_pub.publish(self.setpoint_turning)
+#                self.state_turning_pub.publish(self.state_turning)
             if x.motor_id == 11:
-                self.state_driving = x.pulse
-                self.setpoint_driving_pub.publish(self.setpoint_driving)
-                self.state_driving_pub.publish(self.state_driving)
+		b = x.pulse
+#                self.state_driving = x.pulse
+#                self.setpoint_driving_pub.publish(self.setpoint_driving)
+#                self.state_driving_pub.publish(self.state_driving)
+#	print str(a-b)
+	self.state_turning_pub.publish(a-b)
 if __name__ == "__main__":
     rospy.init_node('IR_reader')
     ir = IR_reader()

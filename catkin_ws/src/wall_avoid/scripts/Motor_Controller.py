@@ -2,7 +2,9 @@
 
 import rospy
 import math
+import time
 from std_msgs.msg import Float64
+from std_msgs.msg import Bool
 from ros_pololu_servo.srv import MotorRange
 from ros_pololu_servo.msg import MotorCommand
 from ros_pololu_servo.msg import MotorState
@@ -14,6 +16,7 @@ from sensor_msgs.msg import Imu
 class Motor_Controller():
     def __init__(self):
         self.timeVar = 5e9
+	#self.didIStop = False
         #Publisher for sending commands to the pololu
         self.motor_turning_pub = rospy.Publisher('pololu/command', MotorCommand, queue_size=1)
         self.cmd_turning = MotorCommand()
@@ -34,35 +37,38 @@ class Motor_Controller():
         self.sub_driving_control = rospy.Subscriber('/driving_PID/control_effort', Float64, self.subFront_PID, queue_size=1)
         #Subscriber for the IMU control msgs
         self.sub_driving_throttle = rospy.Subscriber('/throttle/effort', Float64, self.subCallback_Driving_Control, queue_size=1)
+	#Subscruber for the Stop Sign Signal
+	self.sub_stop_sign = rospy.Subscriber('/stop_sign/bool_to_stop', Bool, self.subCallback_Stop_Sign, queue_size=1)
 
         #this block is to send the desired setpoint
-        self.setpoint_turning = 140
+        self.setpoint_turning = 0
         self.setpoint_driving = 100
 
         self.front_previous = 0
-
+	self.stop = False
         self.ratio_Max = .6
         self.last = rospy.get_rostime().nsecs
         self.stop = False
+	self.cmd_driving.position = .15
     #callback for the control_effort, will turn the control_effort data on -100 to 100 and scale our maximum radians of .6
     def subCallback_Turning_Control(self, msg):
-        turn_ratio = self.ratio_Max*(msg.data/100.0)*(1+self.front_previous/100)
-        print(turn_ratio)
+        turn_ratio = self.ratio_Max*(msg.data/100.0)
+#        print(turn_ratio)
         if(turn_ratio>self.ratio_Max):
             turn_ratio = self.ratio_Max
         if(turn_ratio<(-1*self.ratio_Max)):
             turn_ratio = -1*self.ratio_Max
         self.cmd_turning.position = turn_ratio
         self.motor_turning_pub.publish(self.cmd_turning)
-	self.cmd_driving.position = .15
+#	self.cmd_driving.position = .15
 	#print self.cmd_driving
         self.motor_driving_pub.publish(self.cmd_driving)
     def subFront_PID(self,msg):
         self.front_previous = msg.data
-	print self.cmd_driving
+	#print self.cmd_driving
 	self.cmd_driving.position = .15
-	if(msg.data!=0):
-		self.cmd_driving.position = .3 *(msg.data/100)
+#	if(msg.data!=0):
+#		self.cmd_driving.position = .3 *(msg.data/100)
 #        self.motor_driving_pub.publish(self.cmd_driving)
 
     #callback for the control_effort, will turn the control_effort data on -100 to 100 and scale our maximum radians of .6
@@ -90,12 +96,24 @@ class Motor_Controller():
         # if(self.stop):
         #     throttle = 0
         self.cmd_driving.position = throttle
-#        self.motor_driving_pub.publish(self.cmd_driving)
-	def __exit__(self, exc_type, exc_value, traceback):
-        	self.cmd_driving.position = 0
-	        self.motor_driving_pub.publish(self.cmd_driving)
+        self.motor_driving_pub.publish(self.cmd_driving)
+    def __exit__(self, exc_type, exc_value, traceback):
+        self.cmd_driving.position = 0
+	self.motor_driving_pub.publish(self.cmd_driving)
 
-            	
+    #make the bot stop after confirming seeing a stop sign
+    def subCallback_Stop_Sign(self, msg):
+	if(self.stop):
+		return
+	print type(msg.data)
+	self.stop = True
+#	if(msg.data):
+	throttle = 0
+	self.cmd_driving.position = 0
+        self.motor_driving_pub.publish(self.cmd_driving)
+	rospy.sleep(10)
+	self.cmd_driving.position = .15
+
 if __name__ == "__main__":
     rospy.init_node('Motor_Controller')
     wall = Motor_Controller()

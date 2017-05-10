@@ -29,13 +29,12 @@ class stop_sign_node:
 		except CvBridgeError as e:
 			print(e)
 
-		cv_image_blur = cv2.GaussianBlur(cv_image, (1,1), 0)
+		cv_image_blur = cv2.GaussianBlur(cv_image, (5,5), 0)
 		#thresh = cv2.threshold(cv_image,127,255,0)[1]
 		thresh = cv2.threshold(cv_image_blur,100,255,0)[1]
 		contours = cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)[0]
 		
 		for cnt in contours:
-			#print("TEST")
 			area = cv2.contourArea(cnt)
 			perimeter = cv2.arcLength(cnt,True)
 			epsilon = 0.040*perimeter
@@ -43,6 +42,7 @@ class stop_sign_node:
 			x,y,w,h = cv2.boundingRect(cnt)
 
 			if len(approx) >= 8 and (w >= 55 and h >= 65) and (area >= 3000 and area <= 170000):
+			#if len(approx) >= 8 and (area >= 3000 and area <= 170000):
 				#print(area)
 				cv2.rectangle(cv_image_blur,(x,y),(x+w,y+h),(0,255,0),2)
 				cv2.drawContours(cv_image_blur,[cnt],0,(255,0,0),3)
@@ -52,24 +52,25 @@ class stop_sign_node:
 				self.numDetected = 0
 				self.stopped = False
 
-
 		cv2.imshow("Image window", cv_image_blur)
 		cv2.waitKey(1)
 
 		if self.numDetected >= 5 and not self.stopped:
 			self.stopped = True
+			print(self.stopped)
 			try:
 				self.image_pub.publish(self.bridge.cv2_to_imgmsg(cv_image_blur, "mono8"))
 				self.stop.publish(self.stopped)
+				print("Published msg")
 			except CvBridgeError as e:
 				print(e)
 		
 		if(self.stopped):
 			self.counter += 1
 
-		print(self.stopped)
+		#print(self.stopped)
 
-		if(self.counter >= 10):
+		if(self.counter >= 20):
 			self.stopped = False
 			self.counter = 0
 			self.numDetected = 0
